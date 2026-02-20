@@ -131,7 +131,7 @@ export function ProjectCard({
           {project.title}
         </h3>
 
-        <p className="text-text-secondary line-clamp-2 text-sm leading-relaxed mb-6 grow">
+        <p className="text-text-secondary line-clamp-3 text-sm leading-relaxed mb-6 grow">
           {project.solution}
         </p>
 
@@ -151,6 +151,13 @@ export function ProjectCard({
             </span>
           )}
         </div>
+
+        <Link
+          href={`/work/${project.slug}`}
+          className="mt-6 flex items-center justify-center w-full py-2.5 rounded-lg bg-(--accent)/10 text-accent font-medium hover:bg-(--accent)/20 transition-colors border border-(--accent)/20 text-sm tracking-wide"
+        >
+          Read Case Study &rarr;
+        </Link>
       </div>
     </motion.div>
   );

@@ -71,6 +71,20 @@ const components = {
   strong: (props: any) => (
     <strong className="font-bold text-text-primary" {...props} />
   ),
+  img: (props: any) => (
+    <span className="block my-12 overflow-hidden rounded-2xl border border-border bg-surface-2 shadow-lg">
+      <img
+        className="w-full h-auto object-cover max-h-[600px] object-top"
+        loading="lazy"
+        {...props}
+      />
+      {props.alt && (
+        <span className="block p-4 text-center text-sm font-mono text-text-muted bg-surface/50 backdrop-blur-sm border-t border-border">
+          {props.alt}
+        </span>
+      )}
+    </span>
+  ),
 };
 
 interface PostPageProps {
@@ -151,9 +165,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
                 day: "numeric",
               })}
             </time>
-            <span className="hidden sm:inline-block text-border">
-              |
-            </span>
+            <span className="hidden sm:inline-block text-border">|</span>
             <span className="flex items-center text-accent-2">
               <Clock className="w-4 h-4 mr-2" />
               {post.metadata.readingTime}

@@ -34,9 +34,7 @@ export function Work() {
             viewport={{ once: true, margin: "-100px" }}
             className="flex flex-col gap-4"
           >
-            <h2 className="h2 font-display text-text-primary">
-              Selected Work
-            </h2>
+            <h2 className="h2 font-display text-text-primary">Selected Work</h2>
             <p className="text-lg text-text-secondary max-w-xl">
               A curated collection of my latest projects, ranging from
               production-grade client apps to experimental tools.
@@ -79,7 +77,7 @@ export function Work() {
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, index) => (
                 <motion.div
-                  key={project.id}
+                  key={project.slug}
                   layout
                   initial={{ opacity: 0, scale: 0.95, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
