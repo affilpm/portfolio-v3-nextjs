@@ -6,7 +6,7 @@ import { Send } from "lucide-react";
 
 export function ContactStrip() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[var(--accent)]/10 to-transparent pointer-events-none" />
       <div className="max-w-5xl mx-auto rounded-3xl p-10 md:p-16 lg:p-20 text-center relative z-10 border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-xl shadow-2xl overflow-hidden group">
         {/* Abstract Mesh Background */}
