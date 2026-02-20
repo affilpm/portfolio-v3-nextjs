@@ -13,7 +13,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // --- CLIENT WORK (Real-world / Dummy Data for Portfolio) ---
+  // --- CLIENT WORK ---
   {
     id: "novel-school",
     title: "Novel School Portal",
@@ -22,109 +22,76 @@ export const projects: Project[] = [
       "Traditional school websites suffer from static content and poor mobile responsiveness.",
     solution:
       "A unified platform combining a high-performance public frontend with a secure, Django-backed admin portal.",
-    stack: ["Next.js 15", "Django", "Tailwind CSS", "Cloudflare R2"],
+    stack: ["Next.js", "Django", "Tailwind CSS"],
     features: ["HttpOnly Auth", "Dynamic SEO", "Admin Portal"],
     impact: "Delivered 100% Lighthouse score and streamlined admin workflows.",
-    github: "#",
+    github: "", // Private repo
     live: "https://novelschoolindia.com",
   },
-  {
-    id: "autoscale",
-    title: "AutoScale Dashboard",
-    category: "Client Work",
-    problem: "Client needed a simplified view of their AWS EC2 fleet costs.",
-    solution:
-      "Abstraction layer for managing EC2 fleets and RDS snapshots with cost forecasting.",
-    stack: ["React", "AWS SDK", "TypeScript", "Recharts"],
-    features: ["Visual Forecasting", "Resource Tagging", "Cost Alerts"],
-    impact: "Reduced cloud wastage by 15% during beta.",
-    github: "#",
-    live: "#",
-  },
 
-  // --- PUBLISHED PRODUCTS (SaaS / Public Tools) ---
+  // --- EXPERIMENTAL / PERSONAL PROJECTS ---
   {
-    id: "medstream",
-    title: "MedStream Telehealth",
-    category: "Live Products",
-    problem:
-      "High latency in doctor-patient video calls in low-bandwidth regions.",
-    solution:
-      "Custom WebRTC signaling server with adaptive bitrate framing for telehealth.",
-    stack: ["Go", "React", "WebRTC", "PostgreSQL"],
-    features: ["<200ms Latency", "Encrypted Chat", "Browser Diagnostics"],
-    impact: "Scaled to 10k+ daily users with 99.9% uptime.",
-    github: "#",
-    live: "https://medstream.demo",
-  },
-
-  // --- LEARNING PROJECTS (User Provided) ---
-  {
-    id: "wave",
+    id: "wave-music",
     title: "Wave – Music Streaming",
     category: "Experimental",
     problem:
-      "Building a scalable music streaming service that handles large media files.",
+      "Building a highly scalable music streaming platform capable of handling large audio files, playlists, and seamless playback.",
     solution:
-      "Full-stack streaming service where artists upload songs and users stream in HLS format.",
-    stack: ["Django", "React", "Redis", "Celery", "AWS S3", "HLS"],
-    features: [
-      "Apple HLS Streaming",
-      "Background Workers",
-      "Payment Integration",
+      "A full-stack music streaming website where artists can upload songs and albums, and users can stream music in Apple HLS format.",
+    stack: [
+      "Django",
+      "React.js",
+      "Redis",
+      "Celery",
+      "AWS S3",
+      "HLS",
+      "Razorpay",
     ],
-    impact: "Major Learning Project: Advanced media handling and async tasks.",
+    features: ["Apple HLS Streaming", "Playlist Management", "Payment Gateway"],
+    impact: "Major Learning Project: handling asynchronous media processing.",
     github: "https://github.com/affilpm/Wave",
-    live: "#",
+    live: "", // "will come soon currently only github link"
   },
   {
-    id: "fruitkha",
+    id: "fruitkha-ecommerce",
     title: "Fruitkha – E-Commerce",
     category: "Experimental",
     problem:
-      "Developing a feature-rich e-commerce experience with cart and payments.",
+      "Developing a comprehensive full-stack e-commerce experience managing products, users, and complex payment flows.",
     solution:
-      "Online store with cart, wishlist, wallet, and Razorpay integration.",
+      "An online fruit and vegetable e-commerce platform with cart, wishlist, wallet, coupon management, and payment integration.",
     stack: ["Django", "PostgreSQL", "Razorpay"],
-    features: ["Cart & Wishlist", "Digital Wallet", "Coupons"],
-    impact: "Full-Stack Project: Complete order lifecycle management.",
+    features: ["Cart & Wallet System", "Coupon Management", "Secure Checkout"],
+    impact: "Mastered full-lifecycle order management and database relations.",
     github: "https://github.com/affilpm/Fruitkha",
-    live: "#",
+    live: "",
   },
   {
-    id: "cms-blog",
+    id: "cms-blog-platform",
     title: "CMS Blog Platform",
     category: "Experimental",
-    problem: "Creating a secure and flexible content management system.",
-    solution: "Blog CMS with JWT auth, RBAC, and analytics dashboard.",
+    problem:
+      "Creating a scalable and secure backend system for managing multi-author content and media assets.",
+    solution:
+      "A content management system for blogs with JWT authentication, role-based access, media uploads, and an admin analytics dashboard.",
     stack: ["Django", "DRF", "PostgreSQL", "AWS S3"],
-    features: ["JWT Auth", "RBAC", "S3 Storage"],
-    impact: "Focus on Security and Scalable Architecture.",
+    features: ["JWT Authentication", "Role-Based Access", "S3 Media Storage"],
+    impact: "Focus on API security patterns and scalable cloud storage.",
     github: "https://github.com/affilpm/cms-blog-django",
-    live: "#",
+    live: "",
   },
   {
     id: "task-manager",
     title: "Task Manager",
     category: "Experimental",
-    problem: "Managing team productivity with secure access.",
-    solution: "Productivity app with secure auth and Dockerized deployment.",
-    stack: ["Django", "React", "Redux", "Docker"],
-    features: ["Task Assignment", "Dockerized", "State Management"],
-    impact: "Implemented Containerization best practices.",
+    problem:
+      "Building a collaborative team productivity app requiring complex state management and secure role partitioning.",
+    solution:
+      "A productivity app for task management with secure authentication, role-based access, and Dockerized deployment workflows.",
+    stack: ["Django", "React.js", "Redux.js", "PostgreSQL", "Docker"],
+    features: ["Redux State", "Docker Containers", "Team Assignments"],
+    impact: "Implemented modern containerization and global state management.",
     github: "https://github.com/affilpm/task-manager",
-    live: "#",
-  },
-  {
-    id: "retrogpt",
-    title: "RetroGPT",
-    category: "Experimental",
-    problem: "Experimenting with retro UI aesthetics.",
-    solution: "Windows 95 styled interface for OpenAI API.",
-    stack: ["React", "CSS Modules", "OpenAI API"],
-    features: ["Win95 UI", "Draggable Windows"],
-    impact: "Mastered custom CSS and DOM manipulation.",
-    github: "https://github.com/affilpm/retrogpt",
-    live: "#",
+    live: "",
   },
 ];

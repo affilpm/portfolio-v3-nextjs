@@ -24,10 +24,10 @@ export function Hero() {
   const techBadges = [
     { label: "Python 🐍", top: "15%", left: "10%", delay: 0 },
     { label: "Django", top: "85%", right: "40%", delay: 0.2 },
-    { label: "Next.js", top: "80%", left: "10%", delay: 0.4 },
+    { label: "DRF", top: "80%", left: "10%", delay: 0.4 },
     { label: "PostgreSQL", top: "45%", right: "15%", delay: 0.6 },
-    { label: "React", top: "65%", right: "10%", delay: 0.8 },
-    { label: "Docker", top: "20%", right: "20%", delay: 1.0 },
+    { label: "Redux", top: "65%", right: "10%", delay: 0.8 },
+    { label: "AWS", top: "20%", right: "20%", delay: 1.0 },
   ];
 
   return (
@@ -104,9 +104,7 @@ export function Hero() {
           {/* H1 Heading with Word Swap */}
           <div className="min-h-[180px] sm:min-h-[160px] md:min-h-[220px] lg:min-h-[260px] flex items-center mb-6">
             <h1 className="h1 w-full">
-              <span className="text-text-primary block">
-                Hi, I'm Affil.
-              </span>
+              <span className="text-text-primary block">Hi, I'm Affil.</span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentPhrase}
@@ -151,8 +149,8 @@ export function Hero() {
               </span>
             )}
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-md bg-[rgba(16,185,129,0.1)] text-success border border-(--success)/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-success" />{" "}
-              SEO Consulting
+              <span className="w-1.5 h-1.5 rounded-full bg-success" /> SEO
+              Consulting
             </span>
           </motion.div>
 

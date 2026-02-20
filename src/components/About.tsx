@@ -35,9 +35,7 @@ export function About({ priority = false }: AboutProps) {
               About Me
             </h1>
           ) : (
-            <h2 className="h2 font-display text-text-primary mb-4">
-              About Me
-            </h2>
+            <h2 className="h2 font-display text-text-primary mb-4">About Me</h2>
           )}
           <p
             className={`text-text-secondary max-w-2xl ${
@@ -93,11 +91,10 @@ export function About({ priority = false }: AboutProps) {
               My Philosophy
             </h3>
             <p className="text-lg text-text-secondary leading-relaxed">
-              I am a Senior Full-Stack Developer specialized in building
-              scalable architectures using Python, Django, and Next.js. I focus
-              on creating visually distinct, high-performance web applications
-              that drive real business results for startups and enterprise teams
-              alike.
+              I am a passionate Full-Stack Developer specializing in Python,
+              Django, and React. With intense dedication to continuous learning,
+              I focus on building secure, scalable architectures and visually
+              stunning web applications that solve real-world problems.
             </p>
           </motion.div>
 
@@ -112,9 +109,7 @@ export function About({ priority = false }: AboutProps) {
             <p className="font-bold text-lg text-text-primary">
               {portfolioConfig.location}
             </p>
-            <p className="text-sm text-text-muted">
-              Available Worldwide
-            </p>
+            <p className="text-sm text-text-muted">Available Worldwide</p>
           </motion.div>
 
           {/* Cell 4: Experience Years (col-span-1) */}
@@ -123,7 +118,7 @@ export function About({ priority = false }: AboutProps) {
             className="md:col-span-1 lg:col-span-1 glass-card flex flex-col justify-center items-center text-center"
           >
             <p className="text-5xl font-display font-bold text-gradient mb-2">
-              5+
+              2+
             </p>
             <p className="text-sm font-medium text-text-secondary uppercase tracking-wider">
               Years Exp.
@@ -136,7 +131,7 @@ export function About({ priority = false }: AboutProps) {
             className="md:col-span-1 lg:col-span-1 glass-card flex flex-col justify-center items-center text-center"
           >
             <p className="text-5xl font-display font-bold text-gradient mb-2">
-              30+
+              6+
             </p>
             <p className="text-sm font-medium text-text-secondary uppercase tracking-wider">
               Projects
@@ -150,9 +145,7 @@ export function About({ priority = false }: AboutProps) {
           >
             <CheckCircle className="w-8 h-8 text-success mb-3" />
             <p className="font-bold text-text-primary">Remote Ready</p>
-            <p className="text-xs text-text-muted mt-1">
-              Clear Communicator
-            </p>
+            <p className="text-xs text-text-muted mt-1">Clear Communicator</p>
           </motion.div>
 
           {/* Cell 7: Currently Open To (col-span-2) */}

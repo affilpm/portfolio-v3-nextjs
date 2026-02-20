@@ -104,7 +104,7 @@ export function ProjectCard({
               <Github className="w-4 h-4" />
             </Link>
           )}
-          {project.live && (
+          {project.live ? (
             <Link
               href={project.live}
               target="_blank"
@@ -114,6 +114,13 @@ export function ProjectCard({
             >
               <ExternalLink className="w-4 h-4" />
             </Link>
+          ) : (
+            <div
+              aria-label="Live preview coming soon"
+              className="px-3 py-1 flex items-center justify-center rounded-full bg-(--surface)/90 backdrop-blur-md text-text-muted text-xs font-mono border border-border/50 cursor-not-allowed"
+            >
+              Coming Soon
+            </div>
           )}
         </motion.div>
       </div>

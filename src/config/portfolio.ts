@@ -1,15 +1,15 @@
 export const portfolioConfig = {
-  name: "Affil PM",
-  jobTitle: "Senior Full-Stack Developer",
-  tagline: "I Build. I Ship. I Deploy.",
-  bio: "Full-stack developer specializing in Django, DRF, Next.js and cloud-deployed web applications. Looking for my next role or project.",
-  location: "Remote, Worldwide",
-  email: "affilpm@gmail.com",
+  name: "AFFIL P M",
+  jobTitle: "Python Full Stack Developer",
+  tagline: "I craft delightful digital experiences.",
+  bio: "Python Full Stack Developer specializing in Django, DRF, React, Redux, and PostgreSQL. Let's build something extraordinary together!",
+  location: "Worldwide",
+  email: "affilpm2004@gmail.com",
   socials: {
     github: "https://github.com/affilpm",
-    linkedin: "https://linkedin.com/in/affilpm",
-    twitter: "https://twitter.com",
-    devto: "https://dev.to",
+    linkedin: "https://www.linkedin.com/in/affil-p-m-b9a2b2299",
+    twitter: "", // User did not provide twitter
+    devto: "",
   },
   availability: {
     openToFullTime: process.env.NEXT_PUBLIC_OPEN_TO_WORK === "true" || true, // default to true if env not set
