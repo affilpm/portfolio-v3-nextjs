@@ -19,12 +19,24 @@ export const projects: Project[] = [
     title: "Novel School Portal",
     category: "Client Work",
     problem:
-      "Traditional school websites suffer from static content and poor mobile responsiveness.",
+      "A fast, modern, and SEO-optimized web presence was needed with a comprehensive admin CMS for school management, requiring enterprise-grade deployment and media scaling.",
     solution:
-      "A unified platform combining a high-performance public frontend with a secure, Django-backed admin portal.",
-    stack: ["Next.js", "Django", "Tailwind CSS"],
-    features: ["HttpOnly Auth", "Dynamic SEO", "Admin Portal"],
-    impact: "Delivered 100% Lighthouse score and streamlined admin workflows.",
+      "A complete Django 5.x Multi-Page Application combining a high-performance public frontend with a secure, modular admin portal, deployed via Docker with full Redis caching.",
+    stack: [
+      "Django 5",
+      "PostgreSQL",
+      "Redis",
+      "Cloudflare R2",
+      "Docker",
+      "Tailwind CSS",
+    ],
+    features: [
+      "Custom CMS & RBAC",
+      "Redis Page Caching",
+      "Automated Image/PDF Optimization",
+    ],
+    impact:
+      "Delivered a highly secure, rate-limited, and scalable platform with CDN integration.",
     github: "", // Private repo
     live: "https://novelschoolindia.com",
   },
