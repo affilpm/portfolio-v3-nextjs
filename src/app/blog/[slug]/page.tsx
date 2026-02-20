@@ -9,67 +9,67 @@ import { Metadata } from "next";
 const components = {
   h1: (props: any) => (
     <h1
-      className="text-4xl md:text-5xl font-bold font-display mt-10 mb-6 text-[var(--text-primary)]"
+      className="text-4xl md:text-5xl font-bold font-display mt-10 mb-6 text-text-primary"
       {...props}
     />
   ),
   h2: (props: any) => (
     <h2
-      className="text-3xl md:text-4xl font-bold font-display mt-12 mb-6 text-[var(--text-primary)]"
+      className="text-3xl md:text-4xl font-bold font-display mt-12 mb-6 text-text-primary"
       {...props}
     />
   ),
   h3: (props: any) => (
     <h3
-      className="text-2xl font-bold font-display mt-8 mb-4 text-[var(--text-primary)]"
+      className="text-2xl font-bold font-display mt-8 mb-4 text-text-primary"
       {...props}
     />
   ),
   p: (props: any) => (
     <p
-      className="text-lg text-[var(--text-secondary)] leading-relaxed mb-6"
+      className="text-lg text-text-secondary leading-relaxed mb-6"
       {...props}
     />
   ),
   ul: (props: any) => (
     <ul
-      className="list-disc pl-6 mb-6 text-lg text-[var(--text-secondary)] space-y-2 marker:text-[var(--accent)]"
+      className="list-disc pl-6 mb-6 text-lg text-text-secondary space-y-2 marker:text-accent"
       {...props}
     />
   ),
   ol: (props: any) => (
     <ol
-      className="list-decimal pl-6 mb-6 text-lg text-[var(--text-secondary)] space-y-2 marker:text-[var(--accent)]"
+      className="list-decimal pl-6 mb-6 text-lg text-text-secondary space-y-2 marker:text-accent"
       {...props}
     />
   ),
   li: (props: any) => <li className="" {...props} />,
   a: (props: any) => (
     <a
-      className="text-[var(--accent)] hover:text-[var(--accent-2)] underline decoration-transparent hover:decoration-[var(--accent-2)] transition-all"
+      className="text-accent hover:text-accent-2 underline decoration-transparent hover:decoration-accent-2 transition-all"
       {...props}
     />
   ),
   pre: (props: any) => (
     <pre
-      className="bg-[#0d1117] border border-[var(--border)] p-4 rounded-xl overflow-x-auto mb-8 mt-4"
+      className="bg-[#0d1117] border border-border p-4 rounded-xl overflow-x-auto mb-8 mt-4"
       {...props}
     />
   ),
   code: (props: any) => (
     <code
-      className="font-mono text-sm text-[var(--accent-2)] bg-[var(--surface-2)] px-1.5 py-0.5 rounded-md"
+      className="font-mono text-sm text-accent-2 bg-surface-2 px-1.5 py-0.5 rounded-md"
       {...props}
     />
   ),
   blockquote: (props: any) => (
     <blockquote
-      className="border-l-4 border-[var(--accent)] pl-6 italic text-[var(--text-secondary)] my-8 bg-[var(--surface-2)]/30 py-4 rounded-r-xl"
+      className="border-l-4 border-accent pl-6 italic text-text-secondary my-8 bg-(--surface-2)/30 py-4 rounded-r-xl"
       {...props}
     />
   ),
   strong: (props: any) => (
-    <strong className="font-bold text-[var(--text-primary)]" {...props} />
+    <strong className="font-bold text-text-primary" {...props} />
   ),
 };
 
@@ -127,14 +127,14 @@ export default async function BlogPostPage({ params }: PostPageProps) {
   return (
     <article className="min-h-screen pt-32 pb-32 bg-background relative overflow-hidden">
       {/* Background visual elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-[var(--accent)]/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/4 left-0 w-1/4 h-[400px] bg-[var(--accent-2)]/5 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/3 h-[500px] bg-(--accent)/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-0 w-1/4 h-[400px] bg-(--accent-2)/5 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-3xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Back navigation */}
         <Link
           href="/blog"
-          className="inline-flex items-center text-sm font-medium text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors mb-12 group"
+          className="inline-flex items-center text-sm font-medium text-text-muted hover:text-accent transition-colors mb-12 group"
         >
           <ChevronLeft className="w-4 h-4 mr-1 group-hover:-translate-x-1 transition-transform" />
           Back to all articles
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
 
         {/* Post Header */}
         <header className="mb-16">
-          <div className="flex flex-wrap items-center gap-4 text-sm font-mono text-[var(--text-muted)] mb-6">
+          <div className="flex flex-wrap items-center gap-4 text-sm font-mono text-text-muted mb-6">
             <time dateTime={post.metadata.date} className="flex items-center">
               <Calendar className="w-4 h-4 mr-2" />
               {new Date(post.metadata.date).toLocaleDateString("en-US", {
@@ -151,16 +151,16 @@ export default async function BlogPostPage({ params }: PostPageProps) {
                 day: "numeric",
               })}
             </time>
-            <span className="hidden sm:inline-block text-[var(--border)]">
+            <span className="hidden sm:inline-block text-border">
               |
             </span>
-            <span className="flex items-center text-[var(--accent-2)]">
+            <span className="flex items-center text-accent-2">
               <Clock className="w-4 h-4 mr-2" />
               {post.metadata.readingTime}
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-[var(--text-primary)] leading-tight mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-text-primary leading-tight mb-8">
             {post.metadata.title}
           </h1>
 
@@ -170,7 +170,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
               {post.metadata.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--border)] text-xs text-[var(--text-secondary)] font-medium"
+                  className="px-3 py-1 rounded-full bg-surface-2 border border-border text-xs text-text-secondary font-medium"
                 >
                   {tag}
                 </span>
@@ -185,13 +185,13 @@ export default async function BlogPostPage({ params }: PostPageProps) {
         </div>
 
         {/* Footer CTA - Client Magnet Optimization */}
-        <div className="mt-20 pt-10 border-t border-[var(--border)]">
+        <div className="mt-20 pt-10 border-t border-border">
           <div className="glass-card flex flex-col sm:flex-row items-center justify-between p-8 gap-6 animate-fade-in-up">
             <div>
-              <h4 className="text-xl font-bold font-display text-[var(--text-primary)] mb-2">
+              <h4 className="text-xl font-bold font-display text-text-primary mb-2">
                 Need help building something similar?
               </h4>
-              <p className="text-[var(--text-secondary)] text-sm">
+              <p className="text-text-secondary text-sm">
                 I'm available for freelance projects and consulting.
               </p>
             </div>

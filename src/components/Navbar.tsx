@@ -44,14 +44,14 @@ export function Navbar() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "backdrop-blur-xl bg-[var(--background)]/80 border-b border-[var(--border)] py-4"
+            ? "backdrop-blur-xl bg-(--background)/80 border-b border-border py-4"
             : "bg-transparent py-6"
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-1 z-50">
-            <span className="font-display font-bold text-2xl tracking-tighter text-[var(--text-primary)]">
+            <span className="font-display font-bold text-2xl tracking-tighter text-text-primary">
               Affil
             </span>
             <span className="font-display font-bold text-2xl tracking-tighter text-gradient group-hover:opacity-80 transition-opacity">
@@ -71,15 +71,15 @@ export function Navbar() {
                   href={link.href}
                   className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${
                     isActive
-                      ? "text-[var(--text-primary)]"
-                      : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--card-hover)]"
+                      ? "text-text-primary"
+                      : "text-text-secondary hover:text-text-primary hover:bg-(--card-hover)"
                   }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.div
                       layoutId="navbar-indicator"
-                      className="absolute inset-0 bg-[var(--card-bg)] border border-[var(--card-border)] rounded-full -z-10"
+                      className="absolute inset-0 bg-(--card-bg) border border-(--card-border) rounded-full -z-10"
                       transition={{
                         type: "spring",
                         stiffness: 300,
@@ -95,10 +95,10 @@ export function Navbar() {
           {/* Desktop Right side: Availability & CTA */}
           <div className="hidden md:flex items-center gap-4">
             {portfolioConfig.availability.openToFullTime && (
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-[var(--border)] bg-[var(--card-bg)] text-xs font-mono text-[var(--text-primary)]">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-(--card-bg) text-xs font-mono text-text-primary">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--success)] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--success)]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
                 </span>
                 Open to Work
               </div>
@@ -111,7 +111,7 @@ export function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 -mr-2 text-[var(--text-primary)] z-50 rounded-full hover:bg-[var(--card-hover)] transition-colors"
+            className="md:hidden p-2 -mr-2 text-text-primary z-50 rounded-full hover:bg-(--card-hover) transition-colors"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -126,7 +126,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-[var(--background)]/95 backdrop-blur-md md:hidden flex flex-col pt-24 pb-8 px-6"
+            className="fixed inset-0 z-40 bg-(--background)/95 backdrop-blur-md md:hidden flex flex-col pt-24 pb-8 px-6"
           >
             <div className="flex-1 flex flex-col justify-center gap-6">
               <motion.div
@@ -150,7 +150,7 @@ export function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      className="text-3xl font-display font-bold text-[var(--text-primary)] hover:text-gradient transition-colors"
+                      className="text-3xl font-display font-bold text-text-primary hover:text-gradient transition-colors"
                     >
                       {link.name}
                     </Link>
@@ -159,12 +159,12 @@ export function Navbar() {
               </motion.div>
             </div>
 
-            <div className="mt-auto pt-8 border-t border-[var(--border)] flex flex-col items-center gap-6">
+            <div className="mt-auto pt-8 border-t border-border flex flex-col items-center gap-6">
               {portfolioConfig.availability.openToFullTime && (
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--card-bg)] text-sm font-mono text-[var(--text-primary)]">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-(--card-bg) text-sm font-mono text-text-primary">
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--success)] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--success)]"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
                   </span>
                   Open to Work
                 </div>

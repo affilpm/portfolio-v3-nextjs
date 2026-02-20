@@ -34,10 +34,10 @@ export function Work() {
             viewport={{ once: true, margin: "-100px" }}
             className="flex flex-col gap-4"
           >
-            <h2 className="h2 font-display text-[var(--text-primary)]">
+            <h2 className="h2 font-display text-text-primary">
               Selected Work
             </h2>
-            <p className="text-lg text-[var(--text-secondary)] max-w-xl">
+            <p className="text-lg text-text-secondary max-w-xl">
               A curated collection of my latest projects, ranging from
               production-grade client apps to experimental tools.
             </p>
@@ -48,7 +48,7 @@ export function Work() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-wrap gap-2 p-1.5 rounded-full border border-[var(--border)] bg-[var(--surface-2)] self-start"
+            className="flex flex-wrap gap-2 p-1.5 rounded-full border border-border bg-surface-2 self-start"
           >
             {categories.map((category) => (
               <button
@@ -56,14 +56,14 @@ export function Work() {
                 onClick={() => setActiveTab(category)}
                 className={`relative px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${
                   activeTab === category
-                    ? "text-[var(--text-primary)]"
-                    : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--card-hover)]"
+                    ? "text-text-primary"
+                    : "text-text-muted hover:text-text-primary hover:bg-(--card-hover)"
                 }`}
               >
                 {activeTab === category && (
                   <motion.div
                     layoutId="work-tab-indicator-home"
-                    className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] rounded-full shadow-lg shadow-[var(--accent)]/20"
+                    className="absolute inset-0 bg-linear-to-r from-accent to-accent-2 rounded-full shadow-lg shadow-(--accent)/20"
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   />
                 )}
@@ -100,12 +100,12 @@ export function Work() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="flex flex-col items-center justify-center p-12 text-center text-[var(--text-muted)] border border-[var(--border)] rounded-2xl bg-[var(--surface-2)] mt-8"
+              className="flex flex-col items-center justify-center p-12 text-center text-text-muted border border-border rounded-2xl bg-surface-2 mt-8"
             >
               <p>No projects found for this category yet.</p>
               <button
                 onClick={() => setActiveTab("All")}
-                className="mt-4 text-[var(--accent)] hover:underline"
+                className="mt-4 text-accent hover:underline"
               >
                 View all projects
               </button>

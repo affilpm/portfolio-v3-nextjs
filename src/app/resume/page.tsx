@@ -47,16 +47,16 @@ export default function ResumePage() {
         </div>
 
         {/* Resume Content - Designed like a clean document */}
-        <div className="p-8 md:p-16 rounded-3xl border border-[var(--border)] bg-[var(--surface-2)]/30 shadow-2xl relative">
+        <div className="p-8 md:p-16 rounded-3xl border border-border bg-(--surface-2)/30 shadow-2xl relative">
           {/* Header */}
-          <header className="mb-12 border-b border-[var(--border)] pb-8">
-            <h2 className="text-4xl font-bold font-display mb-2 text-[var(--text-primary)]">
+          <header className="mb-12 border-b border-border pb-8">
+            <h2 className="text-4xl font-bold font-display mb-2 text-text-primary">
               {portfolioConfig.name}
             </h2>
-            <p className="text-xl text-[var(--accent)] font-mono mb-6">
+            <p className="text-xl text-accent font-mono mb-6">
               {portfolioConfig.jobTitle}
             </p>
-            <div className="flex flex-wrap gap-4 text-sm text-[var(--text-secondary)] font-mono">
+            <div className="flex flex-wrap gap-4 text-sm text-text-secondary font-mono">
               <a
                 href={`mailto:${portfolioConfig.email}`}
                 className="hover:text-primary transition-colors flex items-center gap-1"
@@ -87,10 +87,10 @@ export default function ResumePage() {
 
           {/* Summary */}
           <section className="mb-12">
-            <h3 className="text-lg uppercase tracking-widest font-bold text-[var(--accent-2)] mb-4">
+            <h3 className="text-lg uppercase tracking-widest font-bold text-accent-2 mb-4">
               Summary
             </h3>
-            <p className="leading-relaxed text-[var(--text-secondary)]">
+            <p className="leading-relaxed text-text-secondary">
               Product-focused Full-Stack Developer specializing in Python
               (Django) and React (Next.js). Proven track record of architecting
               scalable backend systems and building high-performance, accessible
@@ -127,40 +127,40 @@ export default function ResumePage() {
           </section>
 
           {/* Skills */}
-          <section className="mb-12 border-t border-[var(--border)] pt-8">
-            <h3 className="text-lg uppercase tracking-widest font-bold text-[var(--accent-2)] mb-4">
+          <section className="mb-12 border-t border-border pt-8">
+            <h3 className="text-lg uppercase tracking-widest font-bold text-accent-2 mb-4">
               Core Competencies
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <p className="font-bold mb-1 text-[var(--text-primary)]">
+                <p className="font-bold mb-1 text-text-primary">
                   Languages
                 </p>
-                <p className="text-[var(--text-secondary)]">
+                <p className="text-text-secondary">
                   Python, TypeScript, JavaScript, SQL, HTML/CSS
                 </p>
               </div>
               <div>
-                <p className="font-bold mb-1 text-[var(--text-primary)]">
+                <p className="font-bold mb-1 text-text-primary">
                   Frameworks
                 </p>
-                <p className="text-[var(--text-secondary)]">
+                <p className="text-text-secondary">
                   Django, FastAPI, React, Next.js, Tailwind CSS
                 </p>
               </div>
               <div>
-                <p className="font-bold mb-1 text-[var(--text-primary)]">
+                <p className="font-bold mb-1 text-text-primary">
                   Infrastructure
                 </p>
-                <p className="text-[var(--text-secondary)]">
+                <p className="text-text-secondary">
                   AWS, PostgreSQL, Redis, Docker, Nginx, CI/CD
                 </p>
               </div>
               <div>
-                <p className="font-bold mb-1 text-[var(--text-primary)]">
+                <p className="font-bold mb-1 text-text-primary">
                   Practices
                 </p>
-                <p className="text-[var(--text-secondary)]">
+                <p className="text-text-secondary">
                   REST API Design, Agile, TDD, System Architecture
                 </p>
               </div>
@@ -168,19 +168,19 @@ export default function ResumePage() {
           </section>
 
           {/* Education */}
-          <section className="border-t border-[var(--border)] pt-8">
-            <h3 className="text-lg uppercase tracking-widest font-bold text-[var(--accent-2)] mb-4">
+          <section className="border-t border-border pt-8">
+            <h3 className="text-lg uppercase tracking-widest font-bold text-accent-2 mb-4">
               Education
             </h3>
             <div className="flex flex-wrap items-baseline justify-between gap-2">
-              <h4 className="text-xl font-bold text-[var(--text-primary)]">
+              <h4 className="text-xl font-bold text-text-primary">
                 Bachelor of Science in Computer Science
               </h4>
-              <span className="text-[var(--accent)] font-mono text-sm">
+              <span className="text-accent font-mono text-sm">
                 2023
               </span>
             </div>
-            <div className="text-[var(--text-secondary)] font-medium mt-1">
+            <div className="text-text-secondary font-medium mt-1">
               University Name
             </div>
           </section>

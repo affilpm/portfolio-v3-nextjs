@@ -32,21 +32,21 @@ export function Experience() {
           viewport={{ once: true, margin: "-100px" }}
           className="flex items-center gap-4 mb-16"
         >
-          <h2 className="h2 font-display text-[var(--text-primary)]">
+          <h2 className="h2 font-display text-text-primary">
             Experience
           </h2>
-          <div className="flex-1 h-px bg-gradient-to-r from-[var(--border)] to-transparent" />
+          <div className="flex-1 h-px bg-linear-to-r from-border to-transparent" />
         </motion.div>
 
         {/* Timeline */}
         <div ref={timelineRef} className="relative ml-4 md:ml-8 lg:ml-12">
           {/* Static background line */}
-          <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-[var(--border)] rounded-full" />
+          <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-border rounded-full" />
 
           {/* Animated active timeline line */}
           <div className="absolute left-0 top-0 bottom-0 w-[2px] overflow-hidden rounded-full">
             <motion.div
-              className="absolute left-0 top-0 w-full bg-gradient-to-b from-[var(--accent)] via-[var(--accent-2)] to-[var(--accent)]"
+              className="absolute left-0 top-0 w-full bg-linear-to-b from-accent via-accent-2 to-accent"
               style={{ height: lineHeight }}
             />
           </div>
@@ -75,52 +75,52 @@ export function Experience() {
                   viewport={{ once: true, margin: "-100px" }}
                   className="absolute -left-[9px] top-4 z-10"
                 >
-                  <div className="w-5 h-5 rounded-full bg-[var(--surface-2)] border-2 border-[var(--accent)] flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-[var(--accent-2)]" />
+                  <div className="w-5 h-5 rounded-full bg-surface-2 border-2 border-accent flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-accent-2" />
                   </div>
                   {/* Pulse effect */}
-                  <div className="absolute inset-0 rounded-full bg-[var(--accent)]/30 animate-ping opacity-75" />
+                  <div className="absolute inset-0 rounded-full bg-(--accent)/30 animate-ping opacity-75" />
                 </motion.div>
 
                 {/* Content card */}
-                <div className="glass-card hover:-translate-y-1 hover:border-[var(--accent)]/30 hover:shadow-[0_0_30px_rgba(124,58,237,0.1)] transition-all duration-300">
+                <div className="glass-card hover:-translate-y-1 hover:border-(--accent)/30 hover:shadow-[0_0_30px_rgba(124,58,237,0.1)] transition-all duration-300">
                   {/* Header */}
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold font-display text-[var(--text-primary)] group-hover:text-gradient transition-colors mb-2">
+                      <h3 className="text-xl md:text-2xl font-bold font-display text-text-primary group-hover:text-gradient transition-colors mb-2">
                         {job.role}
                       </h3>
-                      <div className="flex items-center gap-2 text-[var(--text-secondary)] font-medium">
-                        <Briefcase className="w-4 h-4 text-[var(--accent-2)]" />
+                      <div className="flex items-center gap-2 text-text-secondary font-medium">
+                        <Briefcase className="w-4 h-4 text-accent-2" />
                         <span className="text-gradient font-semibold">
                           {job.company}
                         </span>
                       </div>
                     </div>
 
-                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[var(--surface-2)] border border-[var(--border)] text-sm font-mono text-[var(--text-muted)] self-start whitespace-nowrap">
-                      <Calendar className="w-4 h-4 text-[var(--text-muted)]" />
+                    <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-surface-2 border border-border text-sm font-mono text-text-muted self-start whitespace-nowrap">
+                      <Calendar className="w-4 h-4 text-text-muted" />
                       {job.period}
                     </span>
                   </div>
 
                   {/* Description */}
-                  <p className="text-[var(--text-secondary)] mb-6 leading-relaxed">
+                  <p className="text-text-secondary mb-6 leading-relaxed">
                     {job.description}
                   </p>
 
                   {/* Achievements */}
                   <div className="space-y-3">
-                    <h4 className="text-sm font-semibold text-[var(--text-muted)] uppercase tracking-wider mb-4">
+                    <h4 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
                       Key Highlights
                     </h4>
                     <ul className="space-y-3">
                       {job.achievements.map((achievement, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-3 text-sm text-[var(--text-secondary)]"
+                          className="flex items-start gap-3 text-sm text-text-secondary"
                         >
-                          <ChevronRight className="w-4 h-4 text-[var(--success)] mt-0.5 flex-shrink-0" />
+                          <ChevronRight className="w-4 h-4 text-success mt-0.5 shrink-0" />
                           <span className="leading-relaxed">{achievement}</span>
                         </li>
                       ))}
@@ -138,7 +138,7 @@ export function Experience() {
             viewport={{ once: true }}
             className="absolute -left-[5px] bottom-0 z-10"
           >
-            <div className="w-3 h-3 rounded-full bg-[var(--border)]" />
+            <div className="w-3 h-3 rounded-full bg-border" />
           </motion.div>
         </div>
       </div>

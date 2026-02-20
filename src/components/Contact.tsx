@@ -150,7 +150,7 @@ export function Contact() {
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
-          className="h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-16"
+          className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-16"
         />
 
         {/* Social links */}

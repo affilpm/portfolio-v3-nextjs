@@ -43,7 +43,7 @@ export function WorkClient() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-full border border-[var(--border)] bg-[var(--surface-2)] self-start"
+        className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-full border border-border bg-surface-2 self-start"
       >
         {categories.map((category) => (
           <button
@@ -51,14 +51,14 @@ export function WorkClient() {
             onClick={() => handleTabChange(category)}
             className={`relative px-6 py-3 rounded-full text-sm sm:text-base font-medium transition-colors ${
               activeTab === category
-                ? "text-[var(--text-primary)]"
-                : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--card-hover)]"
+                ? "text-text-primary"
+                : "text-text-muted hover:text-text-primary hover:bg-(--card-hover)"
             }`}
           >
             {activeTab === category && (
               <motion.div
                 layoutId="work-page-tab-indicator"
-                className="absolute inset-0 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] rounded-full shadow-lg shadow-[var(--accent)]/20"
+                className="absolute inset-0 bg-linear-to-r from-accent to-accent-2 rounded-full shadow-lg shadow-(--accent)/20"
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
               />
             )}
@@ -93,14 +93,14 @@ export function WorkClient() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex flex-col items-center justify-center p-16 text-center text-[var(--text-muted)] border border-[var(--border)] rounded-2xl bg-[var(--surface-2)] mt-8 w-full"
+            className="flex flex-col items-center justify-center p-16 text-center text-text-muted border border-border rounded-2xl bg-surface-2 mt-8 w-full"
           >
             <p className="text-xl mb-4">
               No projects found for this category yet.
             </p>
             <button
               onClick={() => handleTabChange("All")}
-              className="text-[var(--accent)] hover:underline font-medium"
+              className="text-accent hover:underline font-medium"
             >
               View all projects
             </button>

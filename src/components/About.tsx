@@ -31,16 +31,16 @@ export function About({ priority = false }: AboutProps) {
           className="mb-12 md:mb-16"
         >
           {priority ? (
-            <h1 className="text-5xl md:text-7xl font-bold font-display tracking-tight text-[var(--text-primary)] mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold font-display tracking-tight text-text-primary mb-6">
               About Me
             </h1>
           ) : (
-            <h2 className="h2 font-display text-[var(--text-primary)] mb-4">
+            <h2 className="h2 font-display text-text-primary mb-4">
               About Me
             </h2>
           )}
           <p
-            className={`text-[var(--text-secondary)] max-w-2xl ${
+            className={`text-text-secondary max-w-2xl ${
               priority ? "text-xl leading-relaxed" : "text-lg"
             }`}
           >
@@ -68,11 +68,11 @@ export function About({ priority = false }: AboutProps) {
             variants={itemVariants}
             className="md:col-span-1 md:row-span-2"
           >
-            <div className="w-full h-full rounded-2xl bg-gradient-to-br from-[var(--accent)] to-[var(--accent-2)] p-[2px]">
-              <div className="w-full h-full bg-[var(--surface)] rounded-2xl overflow-hidden relative min-h-[300px] md:min-h-0">
+            <div className="w-full h-full rounded-2xl bg-linear-to-br from-accent to-accent-2 p-[2px]">
+              <div className="w-full h-full bg-surface rounded-2xl overflow-hidden relative min-h-[300px] md:min-h-0">
                 {/* Fallback pattern if no image */}
                 <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPHBhdGggZD0iTTAgMGw4IDhaTTAgOGw4IC04Wk0tMiAyeiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent z-10" />
                 <div className="absolute bottom-4 left-4 z-20">
                   <p className="font-display font-bold text-xl text-white">
                     Affil PM
@@ -88,11 +88,11 @@ export function About({ priority = false }: AboutProps) {
             variants={itemVariants}
             className="md:col-span-2 lg:col-span-2 glass-card flex flex-col justify-center"
           >
-            <h3 className="text-xl font-bold font-display text-[var(--text-primary)] mb-3 flex items-center gap-2">
-              <Code className="w-5 h-5 text-[var(--accent)]" />
+            <h3 className="text-xl font-bold font-display text-text-primary mb-3 flex items-center gap-2">
+              <Code className="w-5 h-5 text-accent" />
               My Philosophy
             </h3>
-            <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
+            <p className="text-lg text-text-secondary leading-relaxed">
               I am a Senior Full-Stack Developer specialized in building
               scalable architectures using Python, Django, and Next.js. I focus
               on creating visually distinct, high-performance web applications
@@ -106,13 +106,13 @@ export function About({ priority = false }: AboutProps) {
             variants={itemVariants}
             className="md:col-span-1 lg:col-span-1 glass-card flex flex-col justify-center items-center text-center group"
           >
-            <div className="w-12 h-12 rounded-full bg-[var(--card-hover)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-              <MapPin className="w-6 h-6 text-[var(--accent-2)]" />
+            <div className="w-12 h-12 rounded-full bg-(--card-hover) flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+              <MapPin className="w-6 h-6 text-accent-2" />
             </div>
-            <p className="font-bold text-lg text-[var(--text-primary)]">
+            <p className="font-bold text-lg text-text-primary">
               {portfolioConfig.location}
             </p>
-            <p className="text-sm text-[var(--text-muted)]">
+            <p className="text-sm text-text-muted">
               Available Worldwide
             </p>
           </motion.div>
@@ -125,7 +125,7 @@ export function About({ priority = false }: AboutProps) {
             <p className="text-5xl font-display font-bold text-gradient mb-2">
               5+
             </p>
-            <p className="text-sm font-medium text-[var(--text-secondary)] uppercase tracking-wider">
+            <p className="text-sm font-medium text-text-secondary uppercase tracking-wider">
               Years Exp.
             </p>
           </motion.div>
@@ -138,7 +138,7 @@ export function About({ priority = false }: AboutProps) {
             <p className="text-5xl font-display font-bold text-gradient mb-2">
               30+
             </p>
-            <p className="text-sm font-medium text-[var(--text-secondary)] uppercase tracking-wider">
+            <p className="text-sm font-medium text-text-secondary uppercase tracking-wider">
               Projects
             </p>
           </motion.div>
@@ -146,11 +146,11 @@ export function About({ priority = false }: AboutProps) {
           {/* Cell 6: Remote Ready (col-span-1) */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-1 lg:col-span-1 glass-card flex flex-col justify-center items-center text-center bg-[var(--card-hover)]/50 border-[var(--success)]/20"
+            className="md:col-span-1 lg:col-span-1 glass-card flex flex-col justify-center items-center text-center bg-(--card-hover)/50 border-(--success)/20"
           >
-            <CheckCircle className="w-8 h-8 text-[var(--success)] mb-3" />
-            <p className="font-bold text-[var(--text-primary)]">Remote Ready</p>
-            <p className="text-xs text-[var(--text-muted)] mt-1">
+            <CheckCircle className="w-8 h-8 text-success mb-3" />
+            <p className="font-bold text-text-primary">Remote Ready</p>
+            <p className="text-xs text-text-muted mt-1">
               Clear Communicator
             </p>
           </motion.div>
@@ -160,20 +160,20 @@ export function About({ priority = false }: AboutProps) {
             variants={itemVariants}
             className="md:col-span-2 lg:col-span-2 glass-card flex flex-col justify-center"
           >
-            <h3 className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider mb-4">
+            <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider mb-4">
               Currently Open To
             </h3>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1.5 bg-[var(--surface-2)] border border-[var(--border)] rounded-md text-sm text-[var(--text-primary)]">
+              <span className="px-3 py-1.5 bg-surface-2 border border-border rounded-md text-sm text-text-primary">
                 Full-Time (Remote)
               </span>
-              <span className="px-3 py-1.5 bg-[var(--surface-2)] border border-[var(--border)] rounded-md text-sm text-[var(--text-primary)]">
+              <span className="px-3 py-1.5 bg-surface-2 border border-border rounded-md text-sm text-text-primary">
                 Contract Roles
               </span>
-              <span className="px-3 py-1.5 bg-[var(--surface-2)] border border-[var(--border)] rounded-md text-sm text-[var(--text-primary)]">
+              <span className="px-3 py-1.5 bg-surface-2 border border-border rounded-md text-sm text-text-primary">
                 Freelance Projects
               </span>
-              <span className="px-3 py-1.5 bg-[var(--surface-2)] border border-[var(--border)] rounded-md text-sm text-[var(--text-primary)]">
+              <span className="px-3 py-1.5 bg-surface-2 border border-border rounded-md text-sm text-text-primary">
                 SEO Consulting
               </span>
             </div>
@@ -182,14 +182,14 @@ export function About({ priority = false }: AboutProps) {
           {/* Cell 8: SEO Wins / Stats (col-span-1) */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-1 lg:col-span-2 glass-card flex flex-col justify-center bg-gradient-to-br from-[var(--surface-2)]/50 to-transparent relative overflow-hidden group"
+            className="md:col-span-1 lg:col-span-2 glass-card flex flex-col justify-center bg-linear-to-br from-(--surface-2)/50 to-transparent relative overflow-hidden group"
           >
-            <Globe className="absolute -right-6 -bottom-6 w-32 h-32 text-[var(--text-muted)]/10 group-hover:scale-110 transition-transform duration-500" />
+            <Globe className="absolute -right-6 -bottom-6 w-32 h-32 text-(--text-muted)/10 group-hover:scale-110 transition-transform duration-500" />
             <div className="relative z-10">
-              <p className="text-3xl font-display font-bold text-[var(--text-primary)] mb-1">
+              <p className="text-3xl font-display font-bold text-text-primary mb-1">
                 Top 3 Rank
               </p>
-              <p className="text-[var(--text-secondary)] text-sm">
+              <p className="text-text-secondary text-sm">
                 For competitive keywords across 5+ client domains.
               </p>
             </div>

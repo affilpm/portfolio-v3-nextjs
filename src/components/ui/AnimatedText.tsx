@@ -124,7 +124,7 @@ export function GradientTextReveal({
       viewport={{ once }}
     >
       <motion.span
-        className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
+        className="absolute inset-0 bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent"
         initial={{ clipPath: "inset(0 100% 0 0)" }}
         whileInView={{ clipPath: "inset(0 0% 0 0)" }}
         transition={{ duration: 1, delay: delay + 0.3, ease: "easeOut" }}

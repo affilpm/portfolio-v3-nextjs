@@ -87,12 +87,12 @@ export function Services({ limit }: { limit?: number }) {
           className="mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
-            <h2 className="h2 font-display text-[var(--text-primary)]">
+            <h2 className="h2 font-display text-text-primary">
               Services
             </h2>
-            <div className="h-px flex-1 bg-gradient-to-r from-[var(--border)] to-transparent" />
+            <div className="h-px flex-1 bg-linear-to-r from-border to-transparent" />
           </div>
-          <p className="text-lg text-[var(--text-secondary)] max-w-2xl">
+          <p className="text-lg text-text-secondary max-w-2xl">
             Specialized engineering and growth services tailored to elevate your
             business operations and digital presence.
           </p>
@@ -110,28 +110,28 @@ export function Services({ limit }: { limit?: number }) {
             <motion.div key={index} variants={itemVariants} className="h-full">
               <div className="glass-card h-full flex flex-col group">
                 {/* Icon in accent gradient circle */}
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[var(--accent)] to-[var(--accent-2)] p-[1px] mb-6 shadow-lg shadow-[var(--accent)]/20 group-hover:shadow-[var(--accent)]/40 transition-shadow">
-                  <div className="w-full h-full rounded-full bg-[var(--surface)] flex items-center justify-center">
-                    <service.icon className="w-6 h-6 text-[var(--text-primary)]" />
+                <div className="w-14 h-14 rounded-full bg-linear-to-br from-accent to-accent-2 p-px mb-6 shadow-lg shadow-(--accent)/20 group-hover:shadow-(--accent)/40 transition-shadow">
+                  <div className="w-full h-full rounded-full bg-surface flex items-center justify-center">
+                    <service.icon className="w-6 h-6 text-text-primary" />
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold font-display text-[var(--text-primary)] mb-3 group-hover:text-[var(--accent-2)] transition-colors">
+                <h3 className="text-xl font-bold font-display text-text-primary mb-3 group-hover:text-accent-2 transition-colors">
                   {service.title}
                 </h3>
 
-                <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-8 flex-grow">
+                <p className="text-sm text-text-secondary leading-relaxed mb-8 grow">
                   {service.description}
                 </p>
 
-                <div className="flex items-center justify-between mt-auto pt-6 border-t border-[var(--border)]">
-                  <span className="text-sm font-mono font-medium text-[var(--success)] bg-[var(--success)]/10 px-3 py-1 rounded-md">
+                <div className="flex items-center justify-between mt-auto pt-6 border-t border-border">
+                  <span className="text-sm font-mono font-medium text-success bg-(--success)/10 px-3 py-1 rounded-md">
                     {service.price}
                   </span>
 
                   <Link
                     href="/contact"
-                    className="btn-ghost !px-4 !py-1.5 !text-sm flex items-center gap-1 group/btn"
+                    className="btn-ghost px-4! py-1.5! text-sm! flex items-center gap-1 group/btn"
                   >
                     Get Quote{" "}
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

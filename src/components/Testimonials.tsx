@@ -10,21 +10,21 @@ const testimonials = [
       "Affil completely transformed our backend architecture. We went from struggling with 10k daily users to effortlessly scaling past 100k. His Django expertise is unmatched.",
     author: "Sarah Jenkins",
     role: "CTO, FinTech Startup",
-    gradient: "from-[var(--accent)] to-[var(--accent-2)]",
+    gradient: "from-accent to-accent-2",
   },
   {
     content:
       "Not only did he build a beautiful, lightning-fast Next.js frontend, but his SEO consulting doubled our organic traffic within 3 months. A rare true full-stack talent.",
     author: "Michael Chen",
     role: "Founder, Growth Media",
-    gradient: "from-[var(--accent-2)] to-emerald-500",
+    gradient: "from-accent-2 to-emerald-500",
   },
   {
     content:
       "Professional, communicative, and delivers immaculate code. The Docker and AWS CI/CD pipeline he set up saved our team hundreds of hours in deployment time.",
     author: "Emily Rodriguez",
     role: "Engineering Manager",
-    gradient: "from-pink-500 to-[var(--accent)]",
+    gradient: "from-pink-500 to-accent",
   },
 ];
 
@@ -55,10 +55,10 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16 md:mb-24"
         >
-          <h2 className="h2 font-display text-[var(--text-primary)] mb-4">
+          <h2 className="h2 font-display text-text-primary mb-4">
             Client Feedback
           </h2>
-          <p className="text-lg text-[var(--text-secondary)]">
+          <p className="text-lg text-text-secondary">
             Don't just take my word for it.
           </p>
         </motion.div>
@@ -72,37 +72,37 @@ export function Testimonials() {
         >
           {testimonials.map((testimonial, index) => (
             <motion.div key={index} variants={itemVariants} className="h-full">
-              <div className="glass-card h-full flex flex-col relative !p-8 group hover:border-[var(--card-border)] hover:-translate-y-2 transition-all duration-300">
+              <div className="glass-card h-full flex flex-col relative p-8! group hover:border-(--card-border) hover:-translate-y-2 transition-all duration-300">
                 {/* Quote Icon */}
                 <div className="absolute -top-6 left-8">
                   <div
-                    className={`w-12 h-12 rounded-full bg-gradient-to-br ${testimonial.gradient} p-[1px] shadow-lg`}
+                    className={`w-12 h-12 rounded-full bg-linear-to-br ${testimonial.gradient} p-px shadow-lg`}
                   >
-                    <div className="w-full h-full rounded-full bg-[var(--surface)] flex items-center justify-center">
+                    <div className="w-full h-full rounded-full bg-surface flex items-center justify-center">
                       <Quote
-                        className="w-5 h-5 text-[var(--text-primary)]"
+                        className="w-5 h-5 text-text-primary"
                         fill="currentColor"
                       />
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-4 flex-grow">
-                  <p className="text-[var(--text-secondary)] leading-relaxed italic mb-8 relative z-10">
+                <div className="pt-4 grow">
+                  <p className="text-text-secondary leading-relaxed italic mb-8 relative z-10">
                     "{testimonial.content}"
                   </p>
                 </div>
 
-                <div className="flex items-center gap-4 mt-auto pt-6 border-t border-[var(--border)]">
+                <div className="flex items-center gap-4 mt-auto pt-6 border-t border-border">
                   {/* Avatar Placeholder */}
                   <div
-                    className={`w-10 h-10 rounded-full bg-gradient-to-br ${testimonial.gradient} flex-shrink-0`}
+                    className={`w-10 h-10 rounded-full bg-linear-to-br ${testimonial.gradient} shrink-0`}
                   />
                   <div>
-                    <h4 className="font-bold text-[var(--text-primary)]">
+                    <h4 className="font-bold text-text-primary">
                       {testimonial.author}
                     </h4>
-                    <p className="text-xs text-[var(--text-muted)] font-mono">
+                    <p className="text-xs text-text-muted font-mono">
                       {testimonial.role}
                     </p>
                   </div>

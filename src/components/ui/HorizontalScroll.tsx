@@ -47,7 +47,7 @@ export function HorizontalScrollItem({ children, className = "", index = 0 }: Ho
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className={`flex-shrink-0 ${className}`}
+      className={`shrink-0 ${className}`}
     >
       {children}
     </motion.div>

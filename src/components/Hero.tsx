@@ -42,7 +42,7 @@ export function Hero() {
             y: [0, 30, 0],
           }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-[var(--accent)] rounded-full blur-[120px] mix-blend-screen"
+          className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-accent rounded-full blur-[120px] mix-blend-screen"
         />
         <motion.div
           animate={{
@@ -57,7 +57,7 @@ export function Hero() {
             ease: "easeInOut",
             delay: 1,
           }}
-          className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] bg-[var(--accent-2)] rounded-full blur-[120px] mix-blend-screen"
+          className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] bg-accent-2 rounded-full blur-[120px] mix-blend-screen"
         />
       </div>
 
@@ -66,7 +66,7 @@ export function Hero() {
         {techBadges.map((badge, i) => (
           <motion.div
             key={badge.label}
-            className="absolute glass-card py-2 px-4 !p-2 text-xs font-mono text-[var(--text-secondary)] shadow-lg !rounded-xl"
+            className="absolute glass-card py-2 px-4 p-2! text-xs font-mono text-text-secondary shadow-lg rounded-xl!"
             style={{ top: badge.top, left: badge.left, right: badge.right }}
             animate={{
               y: [0, -15, 0],
@@ -90,13 +90,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card !p-2 !px-4 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card p-2! px-4! mb-8"
           >
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--success)] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--success)]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
             </span>
-            <span className="text-sm font-medium text-[var(--text-primary)]">
+            <span className="text-sm font-medium text-text-primary">
               Available for Work ✦
             </span>
           </motion.div>
@@ -104,7 +104,7 @@ export function Hero() {
           {/* H1 Heading with Word Swap */}
           <div className="min-h-[180px] sm:min-h-[160px] md:min-h-[220px] lg:min-h-[260px] flex items-center mb-6">
             <h1 className="h1 w-full">
-              <span className="text-[var(--text-primary)] block">
+              <span className="text-text-primary block">
                 Hi, I'm Affil.
               </span>
               <AnimatePresence mode="wait">
@@ -126,7 +126,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-xl text-[var(--text-secondary)] max-w-2xl leading-relaxed"
+            className="text-lg md:text-xl text-text-secondary max-w-2xl leading-relaxed"
           >
             {portfolioConfig.bio}
           </motion.p>
@@ -139,19 +139,19 @@ export function Hero() {
             className="flex flex-wrap items-center gap-3 mt-8"
           >
             {portfolioConfig.availability.openToFullTime && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-md bg-[rgba(16,185,129,0.1)] text-[var(--success)] border border-[var(--success)]/20">
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)]" />{" "}
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-md bg-[rgba(16,185,129,0.1)] text-success border border-(--success)/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-success" />{" "}
                 Full-Time Roles
               </span>
             )}
             {portfolioConfig.availability.openToFreelance && (
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-md bg-[rgba(16,185,129,0.1)] text-[var(--success)] border border-[var(--success)]/20">
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)]" />{" "}
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-md bg-[rgba(16,185,129,0.1)] text-success border border-(--success)/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-success" />{" "}
                 Freelance
               </span>
             )}
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-md bg-[rgba(16,185,129,0.1)] text-[var(--success)] border border-[var(--success)]/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--success)]" />{" "}
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-md bg-[rgba(16,185,129,0.1)] text-success border border-(--success)/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-success" />{" "}
               SEO Consulting
             </span>
           </motion.div>
@@ -185,7 +185,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--text-muted)]"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-text-muted"
       >
         <span className="text-xs font-mono uppercase tracking-widest">
           Scroll

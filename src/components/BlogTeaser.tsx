@@ -22,16 +22,16 @@ export function BlogTeaser({ posts }: BlogTeaserProps) {
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16"
         >
           <div>
-            <h2 className="h2 font-display text-[var(--text-primary)] mb-4">
+            <h2 className="h2 font-display text-text-primary mb-4">
               Latest <span className="text-gradient">Insights</span>
             </h2>
-            <p className="text-lg text-[var(--text-secondary)]">
+            <p className="text-lg text-text-secondary">
               Thoughts on software engineering, design, and architecture.
             </p>
           </div>
           <Link
             href="/blog"
-            className="flex items-center gap-2 text-[var(--accent)] font-medium hover:text-[var(--accent-2)] transition-colors group"
+            className="flex items-center gap-2 text-accent font-medium hover:text-accent-2 transition-colors group"
           >
             View all articles
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -49,26 +49,26 @@ export function BlogTeaser({ posts }: BlogTeaserProps) {
               className="h-full"
             >
               <Link href={`/blog/${post.slug}`} className="block h-full group">
-                <div className="glass-card h-full flex flex-col group-hover:-translate-y-2 group-hover:border-[var(--accent)]/30 group-hover:shadow-[0_0_30px_rgba(124,58,237,0.15)] transition-all duration-300 relative overflow-hidden">
+                <div className="glass-card h-full flex flex-col group-hover:-translate-y-2 group-hover:border-(--accent)/30 group-hover:shadow-[0_0_30px_rgba(124,58,237,0.15)] transition-all duration-300 relative overflow-hidden">
                   {/* Subtle hover gradient inside card */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-br from-(--accent)/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                  <div className="flex items-center text-xs text-[var(--accent-2)] font-mono mb-4 relative z-10">
+                  <div className="flex items-center text-xs text-accent-2 font-mono mb-4 relative z-10">
                     <Calendar className="w-3.5 h-3.5 mr-2" />
                     {post.date}
                   </div>
 
-                  <h3 className="text-xl font-bold font-display text-[var(--text-primary)] mb-4 group-hover:text-[var(--accent-2)] transition-colors leading-snug relative z-10">
+                  <h3 className="text-xl font-bold font-display text-text-primary mb-4 group-hover:text-accent-2 transition-colors leading-snug relative z-10">
                     {post.title}
                   </h3>
 
-                  <p className="text-sm text-[var(--text-secondary)] flex-1 mb-8 leading-relaxed relative z-10">
+                  <p className="text-sm text-text-secondary flex-1 mb-8 leading-relaxed relative z-10">
                     {post.excerpt}
                   </p>
 
-                  <div className="text-sm font-medium text-[var(--text-primary)] mt-auto flex items-center group/btn relative z-10">
+                  <div className="text-sm font-medium text-text-primary mt-auto flex items-center group/btn relative z-10">
                     Read more{" "}
-                    <ArrowRight className="w-4 h-4 ml-1 text-[var(--accent)] group-hover/btn:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 ml-1 text-accent group-hover/btn:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </Link>

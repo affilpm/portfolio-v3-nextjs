@@ -74,10 +74,10 @@ export default function ServicesPage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-8">
         <h1 className="h1 mb-6">
-          <span className="text-[var(--text-primary)] block">How I Can</span>
+          <span className="text-text-primary block">How I Can</span>
           <span className="text-gradient block">Drive Growth.</span>
         </h1>
-        <p className="text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+        <p className="text-xl text-text-secondary leading-relaxed max-w-2xl">
           I partner with startups and established businesses to build robust
           software. Whether you need a full-stack platform or a specialized
           backend service, I deliver scalable results.
@@ -89,21 +89,21 @@ export default function ServicesPage() {
       {/* FAQ Section */}
       <section className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="h2 font-display text-[var(--text-primary)] mb-4">
+          <h2 className="h2 font-display text-text-primary mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-[var(--text-secondary)]">
+          <p className="text-lg text-text-secondary">
             Everything you need to know about working with me.
           </p>
         </div>
 
         <div className="space-y-6">
           {faqs.map((faq, index) => (
-            <div key={index} className="glass-card !p-8">
-              <h3 className="text-xl font-bold font-display text-[var(--text-primary)] mb-3">
+            <div key={index} className="glass-card p-8!">
+              <h3 className="text-xl font-bold font-display text-text-primary mb-3">
                 {faq.question}
               </h3>
-              <p className="text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-text-secondary leading-relaxed">
                 {faq.answer}
               </p>
             </div>

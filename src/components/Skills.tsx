@@ -81,7 +81,7 @@ export function Skills() {
           className="mb-16 md:mb-24"
         >
           <h2 className="h2 mb-4">Core Competencies</h2>
-          <p className="text-lg text-[var(--text-secondary)] max-w-2xl">
+          <p className="text-lg text-text-secondary max-w-2xl">
             An arsenal of modern technologies and advanced growth marketing
             tactics.
           </p>
@@ -91,7 +91,7 @@ export function Skills() {
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-8">
             <h3 className="h3 font-display">Development & Engineering</h3>
-            <div className="h-px flex-1 bg-gradient-to-r from-[var(--border)] to-transparent" />
+            <div className="h-px flex-1 bg-linear-to-r from-border to-transparent" />
           </div>
 
           <motion.div
@@ -105,12 +105,12 @@ export function Skills() {
               <motion.div
                 key={skill.name}
                 variants={itemVariants}
-                className="group flex items-center gap-3 px-5 py-3 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md cursor-default hover:bg-[var(--card-hover)] hover:border-[var(--accent)]/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.15)] hover:-translate-y-1 transition-all duration-300"
+                className="group flex items-center gap-3 px-5 py-3 rounded-xl border border-(--card-border) bg-(--card-bg) backdrop-blur-md cursor-default hover:bg-(--card-hover) hover:border-(--accent)/30 hover:shadow-[0_0_20px_rgba(124,58,237,0.15)] hover:-translate-y-1 transition-all duration-300"
               >
                 <i
-                  className={`${skill.iconClass} text-2xl text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors`}
+                  className={`${skill.iconClass} text-2xl text-text-secondary group-hover:text-text-primary transition-colors`}
                 />
-                <span className="font-medium text-[var(--text-primary)]">
+                <span className="font-medium text-text-primary">
                   {skill.name}
                 </span>
               </motion.div>
@@ -122,7 +122,7 @@ export function Skills() {
         <div>
           <div className="flex items-center gap-3 mb-8">
             <h3 className="h3 font-display">Technical SEO & Growth</h3>
-            <div className="h-px flex-1 bg-gradient-to-r from-[var(--border)] to-transparent" />
+            <div className="h-px flex-1 bg-linear-to-r from-border to-transparent" />
           </div>
 
           <motion.div
@@ -138,10 +138,10 @@ export function Skills() {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="group flex items-center gap-3 px-5 py-3 rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] backdrop-blur-md cursor-default hover:bg-[var(--card-hover)] hover:border-[var(--accent-2)]/30 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:-translate-y-1 transition-all duration-300"
+                  className="group flex items-center gap-3 px-5 py-3 rounded-xl border border-(--card-border) bg-(--card-bg) backdrop-blur-md cursor-default hover:bg-(--card-hover) hover:border-(--accent-2)/30 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:-translate-y-1 transition-all duration-300"
                 >
-                  <Icon className="w-5 h-5 text-[var(--text-secondary)] group-hover:text-[var(--accent-2)] transition-colors" />
-                  <span className="font-medium text-[var(--text-primary)]">
+                  <Icon className="w-5 h-5 text-text-secondary group-hover:text-accent-2 transition-colors" />
+                  <span className="font-medium text-text-primary">
                     {skill.name}
                   </span>
                 </motion.div>

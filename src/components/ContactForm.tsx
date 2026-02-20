@@ -24,32 +24,32 @@ export function ContactForm() {
         <div className="space-y-2">
           <label
             htmlFor="name"
-            className="text-sm font-medium text-[var(--text-secondary)]"
+            className="text-sm font-medium text-text-secondary"
           >
-            Name <span className="text-[var(--accent)]">*</span>
+            Name <span className="text-accent">*</span>
           </label>
           <input
             type="text"
             id="name"
             name="name"
             required
-            className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all placeholder:text-[var(--text-muted)] hover:border-[var(--text-muted)]"
+            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-border text-text-primary focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all placeholder:text-text-muted hover:border-text-muted"
             placeholder="John Doe"
           />
         </div>
         <div className="space-y-2">
           <label
             htmlFor="email"
-            className="text-sm font-medium text-[var(--text-secondary)]"
+            className="text-sm font-medium text-text-secondary"
           >
-            Email <span className="text-[var(--accent)]">*</span>
+            Email <span className="text-accent">*</span>
           </label>
           <input
             type="email"
             id="email"
             name="email"
             required
-            className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all placeholder:text-[var(--text-muted)] hover:border-[var(--text-muted)]"
+            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-border text-text-primary focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all placeholder:text-text-muted hover:border-text-muted"
             placeholder="john@example.com"
           />
         </div>
@@ -59,14 +59,14 @@ export function ContactForm() {
         <div className="space-y-2">
           <label
             htmlFor="inquiryType"
-            className="text-sm font-medium text-[var(--text-secondary)]"
+            className="text-sm font-medium text-text-secondary"
           >
             Inquiry Type
           </label>
           <select
             id="inquiryType"
             name="inquiryType"
-            className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all hover:border-[var(--text-muted)] appearance-none"
+            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-border text-text-primary focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all hover:border-text-muted appearance-none"
           >
             <option value="Freelance Project">Freelance Project</option>
             <option value="Full-Time Role">Full-Time Role</option>
@@ -77,14 +77,14 @@ export function ContactForm() {
         <div className="space-y-2">
           <label
             htmlFor="budget"
-            className="text-sm font-medium text-[var(--text-secondary)]"
+            className="text-sm font-medium text-text-secondary"
           >
             Project Budget
           </label>
           <select
             id="budget"
             name="budget"
-            className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all hover:border-[var(--text-muted)] appearance-none"
+            className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-border text-text-primary focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all hover:border-text-muted appearance-none"
           >
             <option value="Not Applicable">Not Applicable</option>
             <option value="< $1k">&lt; $1,000</option>
@@ -98,23 +98,23 @@ export function ContactForm() {
       <div className="space-y-2">
         <label
           htmlFor="message"
-          className="text-sm font-medium text-[var(--text-secondary)]"
+          className="text-sm font-medium text-text-secondary"
         >
-          Message <span className="text-[var(--accent)]">*</span>
+          Message <span className="text-accent">*</span>
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all resize-none placeholder:text-[var(--text-muted)] hover:border-[var(--text-muted)]"
+          className="w-full px-4 py-3 rounded-xl bg-surface-2 border border-border text-text-primary focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all resize-none placeholder:text-text-muted hover:border-text-muted"
           placeholder="Tell me about your project or opportunity..."
         ></textarea>
       </div>
 
       <button
         type="submit"
-        className="w-full flex items-center justify-center gap-2 text-lg py-4 px-6 rounded-xl font-medium text-white bg-[var(--accent)] hover:bg-[var(--accent-2)] transition-colors"
+        className="w-full flex items-center justify-center gap-2 text-lg py-4 px-6 rounded-xl font-medium text-white bg-accent hover:bg-accent-2 transition-colors"
       >
         <span>Send Message</span>
       </button>
