@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { portfolioConfig } from "@/config/portfolio";
 import { Send, Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: `Contact & Hire | ${portfolioConfig.name}`,
@@ -128,101 +129,7 @@ export default function ContactPage() {
                 Send a Message
               </h3>
 
-              <form className="space-y-6 relative z-10">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="name"
-                      className="text-sm font-medium text-[var(--text-secondary)]"
-                    >
-                      Name <span className="text-[var(--accent)]">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      required
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all placeholder:text-[var(--text-muted)] hover:border-[var(--text-muted)]"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="email"
-                      className="text-sm font-medium text-[var(--text-secondary)]"
-                    >
-                      Email <span className="text-[var(--accent)]">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      required
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all placeholder:text-[var(--text-muted)] hover:border-[var(--text-muted)]"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="inquiryType"
-                      className="text-sm font-medium text-[var(--text-secondary)]"
-                    >
-                      Inquiry Type
-                    </label>
-                    <select
-                      id="inquiryType"
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all hover:border-[var(--text-muted)] appearance-none"
-                    >
-                      <option value="freelance">Freelance Project</option>
-                      <option value="fulltime">Full-Time Role</option>
-                      <option value="consulting">SEO/Consulting</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="budget"
-                      className="text-sm font-medium text-[var(--text-secondary)]"
-                    >
-                      Project Budget
-                    </label>
-                    <select
-                      id="budget"
-                      className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all hover:border-[var(--text-muted)] appearance-none"
-                    >
-                      <option value="Not Applicable">Not Applicable</option>
-                      <option value="< $1k">&lt; $1,000</option>
-                      <option value="$1k - $5k">$1,000 - $5,000</option>
-                      <option value="$5k - $10k">$5,000 - $10,000</option>
-                      <option value="$10k+">$10,000+</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label
-                    htmlFor="message"
-                    className="text-sm font-medium text-[var(--text-secondary)]"
-                  >
-                    Message <span className="text-[var(--accent)]">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-xl bg-[var(--surface-2)] border border-[var(--border)] text-[var(--text-primary)] focus:border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)] outline-none transition-all resize-none placeholder:text-[var(--text-muted)] hover:border-[var(--text-muted)]"
-                    placeholder="Tell me about your project or opportunity..."
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="btn-primary w-full flex items-center justify-center gap-2 text-lg py-4"
-                >
-                  Send Message <Send className="w-5 h-5" />
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
