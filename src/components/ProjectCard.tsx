@@ -87,7 +87,6 @@ export function ProjectCard({
           </span>
         </div>
 
-        {/* Top-Right Links that appear on hover */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: isHovering ? 1 : 0, y: isHovering ? 0 : 10 }}
@@ -99,6 +98,7 @@ export function ProjectCard({
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`View ${project.title} on GitHub`}
               className="p-2.5 rounded-full bg-(--surface)/90 backdrop-blur-md text-text-secondary hover:text-text-primary hover:bg-(--accent)/20 transition-all hover:scale-110 border border-border"
             >
               <Github className="w-4 h-4" />
@@ -109,6 +109,7 @@ export function ProjectCard({
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Visit ${project.title} live website`}
               className="p-2.5 rounded-full bg-(--surface)/90 backdrop-blur-md text-text-secondary hover:text-text-primary hover:bg-(--accent-2)/20 transition-all hover:scale-110 border border-border"
             >
               <ExternalLink className="w-4 h-4" />

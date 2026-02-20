@@ -30,14 +30,16 @@ export default function ContactPage() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="max-w-3xl mb-16 md:mb-24">
-          <h1 className="h1 mb-6">
-            <span className="text-text-primary block">
+        <div className="w-full max-w-4xl mb-16 md:mb-24">
+          <h1 className="mb-8 font-display font-extrabold leading-[1.1] tracking-tight">
+            <span className="text-text-primary block text-[clamp(2.5rem,8vw,5.5rem)]">
               Let's Start a
             </span>
-            <span className="text-gradient block">Conversation.</span>
+            <span className="text-gradient inline-block pr-3 pb-2 mt-1 max-w-full overflow-hidden text-ellipsis text-[min(12vw,5.5rem)]">
+              Conversation.
+            </span>
           </h1>
-          <p className="text-lg md:text-xl text-text-secondary leading-relaxed">
+          <p className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl">
             I'm currently available for freelance projects and remote full-time
             opportunities. Fill out the form below or reach out directly via
             email.

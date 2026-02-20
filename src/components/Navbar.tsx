@@ -36,6 +36,18 @@ export function Navbar() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
       <motion.nav
@@ -49,8 +61,12 @@ export function Navbar() {
         }`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="group flex items-center gap-1 z-50">
+          {/* Logo link to home */}
+          <Link
+            href="/"
+            className="group flex items-center gap-1 z-50"
+            aria-label="AffilPM Home"
+          >
             <span className="font-display font-bold text-2xl tracking-tighter text-text-primary">
               Affil
             </span>
@@ -60,7 +76,10 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <nav
+            className="hidden md:flex items-center gap-1"
+            aria-label="Main Navigation"
+          >
             {links.map((link) => {
               const isActive =
                 pathname === link.href ||
@@ -69,17 +88,18 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${
+                  aria-current={isActive ? "page" : undefined}
+                  className={`relative px-5 py-2 text-[15px] font-medium tracking-wide transition-all duration-300 rounded-full ${
                     isActive
                       ? "text-text-primary"
-                      : "text-text-secondary hover:text-text-primary hover:bg-(--card-hover)"
+                      : "text-text-secondary hover:text-text-primary hover:bg-(--card-hover)/50"
                   }`}
                 >
-                  {link.name}
+                  <span className="relative z-10">{link.name}</span>
                   {isActive && (
                     <motion.div
                       layoutId="navbar-indicator"
-                      className="absolute inset-0 bg-(--card-bg) border border-(--card-border) rounded-full -z-10"
+                      className="absolute inset-0 bg-(--card-bg) border border-(--card-border) rounded-full z-0 shadow-sm"
                       transition={{
                         type: "spring",
                         stiffness: 300,
@@ -90,12 +110,15 @@ export function Navbar() {
                 </Link>
               );
             })}
-          </div>
+          </nav>
 
           {/* Desktop Right side: Availability & CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-5">
             {portfolioConfig.availability.openToFullTime && (
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-(--card-bg) text-xs font-mono text-text-primary">
+              <div
+                className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-(--card-bg)/50 backdrop-blur-sm text-[13px] font-medium tracking-wide text-text-primary shadow-sm"
+                aria-label="Available for full-time work"
+              >
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
@@ -103,7 +126,10 @@ export function Navbar() {
                 Open to Work
               </div>
             )}
-            <Link href="/contact" className="btn-primary text-sm py-2 px-5">
+            <Link
+              href="/contact"
+              className="btn-primary text-[15px] font-semibold tracking-wide py-2.5 px-6 shadow-md hover:shadow-lg transition-all"
+            >
               Hire Me
             </Link>
           </div>
@@ -126,9 +152,9 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-(--background)/95 backdrop-blur-md md:hidden flex flex-col pt-24 pb-8 px-6"
+            className="fixed inset-0 z-40 bg-(--background)/95 backdrop-blur-md md:hidden flex flex-col pt-20 pb-safe px-6 h-dvh"
           >
-            <div className="flex-1 flex flex-col justify-center gap-6">
+            <div className="flex-1 overflow-y-auto pt-8 pb-4 flex flex-col justify-center gap-6">
               <motion.div
                 variants={{
                   show: {
@@ -138,30 +164,51 @@ export function Navbar() {
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="flex flex-col gap-4 text-center"
+                className="flex flex-col gap-6 text-center my-auto"
               >
-                {links.map((link) => (
-                  <motion.div
-                    key={link.name}
-                    variants={{
-                      hidden: { opacity: 0, y: 20 },
-                      show: { opacity: 1, y: 0 },
-                    }}
-                  >
-                    <Link
-                      href={link.href}
-                      className="text-3xl font-display font-bold text-text-primary hover:text-gradient transition-colors"
+                {[{ name: "Home", href: "/" }, ...links].map((link) => {
+                  const isActive =
+                    pathname === link.href ||
+                    (pathname.startsWith(link.href) && link.href !== "/");
+                  return (
+                    <motion.div
+                      key={link.name}
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        show: { opacity: 1, y: 0 },
+                      }}
+                      className="relative flex justify-center w-max mx-auto"
                     >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                ))}
+                      <Link
+                        href={link.href}
+                        className={`relative z-10 px-6 py-2 text-3xl font-display font-bold transition-colors ${
+                          isActive
+                            ? "text-text-primary"
+                            : "text-text-secondary hover:text-text-primary hover:text-gradient"
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                      {isActive && (
+                        <motion.div
+                          layoutId="mobile-nav-indicator"
+                          className="absolute inset-0 bg-(--card-bg) border border-(--card-border) rounded-2xl z-0"
+                          transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 30,
+                          }}
+                        />
+                      )}
+                    </motion.div>
+                  );
+                })}
               </motion.div>
             </div>
 
-            <div className="mt-auto pt-8 border-t border-border flex flex-col items-center gap-6">
+            <div className="mt-auto pt-6 pb-8 border-t border-border flex flex-col items-center gap-6 shrink-0">
               {portfolioConfig.availability.openToFullTime && (
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-(--card-bg) text-sm font-mono text-text-primary">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-(--card-bg)/80 backdrop-blur-sm text-sm font-medium tracking-wide text-text-primary shadow-sm">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
@@ -171,7 +218,7 @@ export function Navbar() {
               )}
               <Link
                 href="/contact"
-                className="btn-primary w-full max-w-xs text-lg py-3"
+                className="btn-primary w-full max-w-xs text-lg py-3.5 font-semibold shadow-md"
               >
                 Hire Me
               </Link>
