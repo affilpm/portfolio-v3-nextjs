@@ -3,7 +3,14 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
-import { Mail, Github, Linkedin, Twitter, ArrowUpRight, Send } from "lucide-react";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  Twitter,
+  ArrowUpRight,
+  Send,
+} from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import { FloatingElement } from "@/components/ui/ParallaxSection";
@@ -50,7 +57,7 @@ export function Contact() {
     <section
       ref={containerRef}
       id="contact"
-      className="relative py-32 px-6 md:px-12 overflow-hidden"
+      className="relative pt-32 pb-12 px-6 md:px-12 overflow-hidden"
     >
       {/* Background decorations */}
       <div className="absolute inset-0 -z-10">
@@ -114,8 +121,9 @@ export function Contact() {
           viewport={{ once: true }}
           className="text-xl md:text-2xl text-muted-foreground text-center max-w-xl mx-auto mb-12 leading-relaxed"
         >
-          I&apos;m currently open to new opportunities. Whether you have a question,
-          a project idea, or just want to say hi—my inbox is always open!
+          I&apos;m currently open to new opportunities. Whether you have a
+          question, a project idea, or just want to say hi—my inbox is always
+          open!
         </motion.p>
 
         {/* CTA Button */}
@@ -184,8 +192,7 @@ export function Contact() {
           className="text-center mt-20 pt-8 border-t border-white/5"
         >
           <p className="text-sm text-muted-foreground/60 font-mono">
-            Designed & Built by{" "}
-            <span className="text-primary">Affil PM</span>
+            Designed & Built by <span className="text-primary">Affil PM</span>
           </p>
           <motion.p
             initial={{ opacity: 0 }}
