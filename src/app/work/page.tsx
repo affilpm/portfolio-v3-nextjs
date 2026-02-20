@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden">
+    <main className="min-h-screen pt-32 pb-0 bg-background relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-0 right-0 w-1/2 h-[600px] bg-[var(--accent)]/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-1/3 h-[500px] bg-[var(--accent-2)]/5 blur-[120px] rounded-full pointer-events-none" />

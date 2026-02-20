@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden">
+    <main className="min-h-screen pt-32 pb-0 bg-background relative overflow-hidden">
       <div className="absolute top-0 left-1/4 w-1/2 h-[500px] bg-[var(--accent)]/5 blur-[120px] rounded-full pointer-events-none" />
 
       {/* The AboutBento is marked priority to load instantly without scroll delay */}

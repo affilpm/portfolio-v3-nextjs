@@ -28,7 +28,7 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-background relative overflow-hidden">
+    <main className="min-h-screen pt-32 pb-0 bg-background relative overflow-hidden">
       <div className="absolute top-0 right-1/4 w-1/2 h-[400px] bg-[var(--accent)]/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10 mb-20 text-center">

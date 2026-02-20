@@ -23,12 +23,12 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <main className="min-h-screen pt-32 pb-20 relative overflow-hidden">
       {/* Background Ornaments */}
       <div className="absolute top-0 right-0 w-1/2 h-[600px] bg-[var(--accent)]/10 blur-[120px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-0 left-0 w-1/3 h-[500px] bg-[var(--accent-2)]/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="max-w-3xl mb-16 md:mb-24">
           <h1 className="h1 mb-6">

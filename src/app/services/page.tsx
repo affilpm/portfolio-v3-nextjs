@@ -52,7 +52,7 @@ const faqs = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24">
+    <main className="min-h-screen pt-32 pb-0">
       {/* JSON-LD for FAQ */}
       <script
         type="application/ld+json"

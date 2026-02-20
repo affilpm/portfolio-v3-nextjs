@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export function CustomCursor() {
+  const [mounted, setMounted] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   // Set up mouse position trackers
   const cursorX = useMotionValue(-100);
@@ -17,6 +18,7 @@ export function CustomCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    setMounted(true);
     // Only show on desktop devices with fine pointers
     const checkIsDesktop = () => {
       setIsDesktop(window.matchMedia("(pointer: fine)").matches);
@@ -58,7 +60,7 @@ export function CustomCursor() {
     };
   }, [cursorX, cursorY, isDesktop]);
 
-  if (!isDesktop) return null;
+  if (!mounted || !isDesktop) return null;
 
   return (
     <>

@@ -25,13 +25,13 @@ export const metadata: Metadata = {
 
 export default function ResumePage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 px-6 md:px-12 bg-background relative overflow-hidden text-foreground">
-      <div className="max-w-4xl mx-auto relative z-10">
+    <main className="min-h-screen pt-32 pb-0 bg-background relative overflow-hidden text-foreground">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10">
         {/* Actions Bar */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-12 p-6 rounded-2xl border border-white/10 bg-white/2 backdrop-blur-sm">
           <div>
             <h1 className="text-3xl font-bold font-display">Resume</h1>
-            <p className="text-muted-foreground mt-1">
+            <p className="text-muted-foreground mt-1" suppressHydrationWarning>
               Updated{" "}
               {new Date().toLocaleDateString("en-US", {
                 month: "long",
