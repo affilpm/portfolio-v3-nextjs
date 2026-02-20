@@ -116,10 +116,10 @@ export function ProjectCard({
             </Link>
           ) : (
             <div
-              aria-label="Live preview coming soon"
-              className="px-3 py-1 flex items-center justify-center rounded-full bg-(--surface)/90 backdrop-blur-md text-text-muted text-xs font-mono border border-border/50 cursor-not-allowed"
+              className="px-3 py-1 flex items-center justify-center rounded-full bg-(--surface)/90 backdrop-blur-md text-text-muted text-xs font-mono border border-border/50 cursor-help"
+              title="Project is complete. Live hosting will be available soon."
             >
-              Coming Soon
+              Hosting Soon
             </div>
           )}
         </motion.div>
