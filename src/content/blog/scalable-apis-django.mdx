@@ -1,0 +1,67 @@
+---
+title: "Building Scalable APIs with Django and PostgreSQL"
+date: "2026-02-10"
+excerpt: "Learn how to architect high-performance, resilient APIs capable of handling millions of requests per day without breaking a sweat."
+tags: ["Django", "Python", "System Design", "PostgreSQL"]
+---
+
+Building scalable APIs is one of the most critical skills for a backend engineer. When your application starts gaining traction, the architecture that worked for 100 users will quickly buckle under the weight of 100,000.
+
+In this post, we will explore the architectural patterns and database optimizations required to scale a Django application using PostgreSQL.
+
+## 1. Database Indexing strategy
+
+Before you reach for complex caching layers, ensure your database is doing the bare minimum amount of work.
+
+A simple missing index can turn a 5ms query into a 500ms bottleneck.
+
+```python
+class Transaction(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        # Crucial for queries filtering by user and sorting by date
+        indexes = [
+            models.Index(fields=['user', '-created_at']),
+        ]
+```
+
+## 2. Aggressive Caching with Redis
+
+Once the database is optimized, the next step is reducing the load on it entirely. Read-heavy endpoints should rarely hit the database.
+
+Using Django's low-level cache API combined with Redis is incredibly effective:
+
+```python
+from django.core.cache import cache
+
+def get_user_statistics(user_id):
+    cache_key = f"user_stats_{user_id}"
+    stats = cache.get(cache_key)
+
+    if not stats:
+        stats = calculate_heavy_statistics(user_id)
+        # Cache for 15 minutes
+        cache.set(cache_key, stats, timeout=900)
+
+    return stats
+```
+
+## 3. Offloading Work to Celery
+
+Never block an HTTP cycle for a task that doesn't need to be immediate. Sending emails, processing images, or analyzing data should be delegated to a background worker.
+
+```python
+@shared_task
+def process_upload(file_id):
+    # This happens in the background
+    # The user gets an immediate 202 Accepted response
+    file = File.objects.get(id=file_id)
+    perform_heavy_analysis(file)
+```
+
+## Conclusion
+
+Scaling isn't about deploying to a massive Kubernetes cluster on day one. It's about writing efficient queries, caching aggressively, and decoupling your backend processes. Master these fundamentals, and your Django APIs will be ready for the enterprise.

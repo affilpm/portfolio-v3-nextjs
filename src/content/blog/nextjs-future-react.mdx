@@ -1,0 +1,61 @@
+---
+title: "Why Next.js is the Future of Fullstack React"
+date: "2026-01-25"
+excerpt: "Exploring the App Router, Server Components, and why Next.js is my go-to framework for shipping modern web apps quickly securely."
+tags: ["Next.js", "React", "Frontend", "Architecture"]
+---
+
+React changed the way we build interfaces, but building a production-ready application requires more than just a view library. You need routing, data fetching, server-side rendering, and SEO optimizations.
+
+Next.js provides all of this out of the box, and with the introduction of the App Router and React Server Components, it has fundamentally shifted how we architect fullstack JavaScript applications.
+
+## The Problem with SPAs (Single Page Applications)
+
+For years, the standard approach to React was building a massive JavaScript bundle that shipped to the client. The browser had to download the HTML, download the JS, execute the JS, fetch the data, and _then_ render the UI.
+
+For users on slow connections, this resulted in a blank white screen and a terrible experience. It also meant search engines struggled to index your content.
+
+## Enter Server Components
+
+React Server Components (RSC) allow us to render components on the server _at build time or request time_, shipping zero JavaScript to the client.
+
+```tsx
+// This component fetches data directly from the DB on the server
+// No loading spinners, no useEffect, no `fetch` in the browser!
+import { db } from "@/lib/db";
+
+export default async function ProjectList() {
+  const projects = await db.project.findMany();
+
+  return (
+    <ul>
+      {projects.map((project) => (
+        <li key={project.id}>{project.title}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+This drastically reduces the bundle size and improves Time to Interactive (TTI) and Largest Contentful Paint (LCP) - metrics that are crucial for modern SEO.
+
+## Built-in SEO & Metadata
+
+Next.js 14 makes it incredibly simple to generate dynamic metadata for SEO and social sharing:
+
+```tsx
+export async function generateMetadata({ params }): Promise<Metadata> {
+  const post = await getPost(params.slug);
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      images: [post.coverImage],
+    },
+  };
+}
+```
+
+## Conclusion
+
+Next.js is no longer just a "React framework"; it's a complete fullstack solution. By moving data fetching to the server and embracing server components, developers can ship faster, more secure, and highly optimized applications.

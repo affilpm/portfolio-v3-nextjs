@@ -1,0 +1,16 @@
+{
+  "name": "Affil PM - Portfolio",
+  "short_name": "AffilPM",
+  "description": "Portfolio of Affil PM, a Full-Stack Developer specialized in Python, Django, and Next.js.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080C14",
+  "theme_color": "#7C3AED",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+---
+title: "Mastering Database Optimization"
+date: "2026-01-05"
+excerpt: "A deep dive into indexing strategies, query execution planning, and common pitfalls when scaling relational databases like PostgreSQL."
+tags: ["Databases", "PostgreSQL", "Performance"]
+---
+
+When applications slow down, the database is often the culprit. But throwing more RAM and CPU at the database server is an expensive bandage, not a cure. The cure is understanding how your database executes queries and optimizing your schema and application logic accordingly.
+
+This post will cover practical database optimization techniques, focusing primarily on PostgreSQL.
+
+## 1. EXPLAIN ANALYZE is Your Best Friend
+
+You cannot fix what you cannot measure. Before optimizing a query, you need to understand _why_ it is slow. PostgreSQL provides the `EXPLAIN ANALYZE` command to detail exactly how it plans to execute a query and where the time is being spent.
+
+```sql
+EXPLAIN ANALYZE
+SELECT * FROM users
+WHERE last_login < NOW() - INTERVAL '30 days';
+```
+
+Look for `Seq Scan` (Sequential Scan). If your query is performing a sequential scan on a table with millions of rows, it means it's reading every single row to find the matches. This is where indexes come in.
+
+## 2. Beyond the B-Tree: Specialized Indexes
+
+While the standard B-Tree index is great for equality (`=`) and range (`<`, `>`) queries, PostgreSQL offers specialized indexes for specific data types:
+
+- **GIN (Generalized Inverted Index):** Essential for searching inside text (Full Text Search), arrays, or JSONB documents.
+- **GiST (Generalized Search Tree):** Used for geometric data, network addresses, and sometimes text search.
+- **BRIN (Block Range Index):** Incredible for very large tables where data is physically sorted (e.g., time-series data like logs). It uses a fraction of the space of a B-Tree.
+
+## 3. The N+1 Query Problem
+
+This is the most common performance killer in applications using ORMs (like Django or Prisma). It happens when you fetch a list of objects, and then for _each_ object, you execute another query to fetch related data.
+
+**The Bad Way (Django):**
+
+```python
+# Issues 1 query to get 100 authors
+authors = Author.objects.all()
+
+for author in authors:
+    # Issues 100 separate queries to get books! (N+1 = 101 queries)
+    books = author.book_set.all()
+```
+
+**The Optimized Way:**
+
+```python
+# Issues just 2 queries total, fetching all authors and their books
+authors = Author.objects.prefetch_related('book_set').all()
+
+for author in authors:
+    # Uses cached data, no extra queries
+    books = author.book_set.all()
+```
+
+## Conclusion
+
+Database optimization is an iterative process. Monitor your slow query logs, understand your indexes, and always be wary of ORM-generated N+1 problems. Keep your database efficient, and your application will scale gracefully.

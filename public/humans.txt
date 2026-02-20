@@ -1,0 +1,11 @@
+/* TEAM */
+  Developer: Affil PM
+  Role: Full-Stack Developer
+  Contact: affilpm@gmail.com
+  GitHub: github.com/affilpm
+
+/* SITE */
+  Last update: 2026/02/20
+  Language: English
+  Doctype: HTML5
+  Framework: Next.js 14+ (App Router), React, TailwindCSS v4, Framer Motion
