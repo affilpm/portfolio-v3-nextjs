@@ -20,7 +20,7 @@ export const portfolioConfig = {
     defaultTitle: "Affil PM — Python & Django Developer | Open to Work",
     defaultDescription:
       "Senior Fullstack Engineer specializing in scalable SaaS architectures, Python/Django backends, and high-performance Next.js frontends.",
-    url: "https://affilpm.dev",
+    url: "https://affilpm.com",
   },
   theme: {
     accent: "#7C3AED", // Electric violet

@@ -4,7 +4,7 @@ Welcome to the source code for my personal portfolio, built with Next.js 14+ App
 
 ## 🚀 Live Demo
 
-[https://affilpm.dev](https://affilpm.dev)
+[https://affilpm.com](https://affilpm.com)
 
 ## 🛠 Tech Stack
 
