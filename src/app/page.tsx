@@ -1,6 +1,4 @@
 import { Hero } from "@/components/Hero";
-import { OpenToWorkBanner } from "@/components/OpenToWorkBanner";
-
 import { BlogTeaser } from "@/components/BlogTeaser";
 import { About } from "@/components/About";
 import { Services } from "@/components/Services";
@@ -16,15 +14,22 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* 1. Hook — first impression */}
       <Hero />
-      <OpenToWorkBanner />
-      <BlogTeaser posts={latestPosts} />
-      <About />
-      <Services limit={3} />
-      <Skills />
-      <Work />
-      <Experience />
+      {/* 2. Social proof — build trust fast */}
       <Testimonials />
+      {/* 3. What I build — convert interest into intent */}
+      <Services limit={3} />
+      {/* 4. Proof of work */}
+      <Work />
+      {/* 5. Who I am */}
+      <About />
+      {/* 6. Depth signals */}
+      <Skills />
+      <Experience />
+      {/* 7. Content marketing */}
+      <BlogTeaser posts={latestPosts} />
+      {/* 8. Final CTA */}
       <ContactStrip />
     </main>
   );

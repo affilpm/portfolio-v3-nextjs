@@ -2,45 +2,60 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Send } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { portfolioConfig } from "@/config/portfolio";
 
 export function ContactStrip() {
   return (
-    <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-(--accent)/10 to-transparent pointer-events-none" />
-      <div className="max-w-5xl mx-auto rounded-3xl p-10 md:p-16 lg:p-20 text-center relative z-10 border border-(--card-border) bg-(--card-bg) backdrop-blur-xl shadow-2xl overflow-hidden group">
-        {/* Abstract Mesh Background */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSI+PC9jaXJjbGU+Cjwvc3ZnPg==')] opacity-10 pointer-events-none" />
+    <section className="py-32 md:py-40 lg:py-48 relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent/[0.04] rounded-full blur-[200px] pointer-events-none" />
 
-        <div className="absolute top-0 right-0 w-64 h-64 bg-(--accent)/20 blur-[80px] rounded-full group-hover:scale-110 transition-transform duration-700" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-(--accent-2)/20 blur-[80px] rounded-full group-hover:scale-110 transition-transform duration-700" />
-
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="relative z-10 flex flex-col items-center"
+          transition={{ duration: 0.7 }}
+          className="text-center"
         >
-          <span className="text-sm font-bold tracking-widest text-accent uppercase mb-4">
-            Contact
-          </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display text-text-primary mb-6 leading-normal py-2">
-            Let's build something{" "}
-            <span className="text-gradient inline-block pb-2">
-              exceptional.
-            </span>
+          {/* Massive headline */}
+          <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-text-primary leading-[0.95] tracking-tight mb-8">
+            Have a project
+            <br />
+            <span className="text-gradient">in mind?</span>
           </h2>
-          <p className="text-lg md:text-xl text-text-secondary mb-10 max-w-2xl mx-auto leading-relaxed">
-            I'm currently available for freelance projects and full-time remote
-            opportunities. Whether you need a simple website or a complex SaaS
-            architecture, I can help.
+
+          <p className="text-base md:text-lg text-text-secondary max-w-lg mx-auto mb-12 leading-relaxed">
+            Let&apos;s turn your vision into a fast, scalable product that
+            drives real growth.
           </p>
-          <Link
-            href="/contact"
-            className="btn-primary flex items-center gap-3 text-lg px-8 py-4"
-          >
-            Start a Conversation <Send className="w-5 h-5" />
-          </Link>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <Link
+              href="/contact"
+              className="btn-primary group text-lg px-10 py-4"
+            >
+              <span>Start a Project</span>
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <a
+              href={`mailto:${portfolioConfig.email}`}
+              className="btn-ghost text-base"
+            >
+              {portfolioConfig.email}
+            </a>
+          </div>
+
+          {/* Trust */}
+          <div className="flex items-center justify-center gap-6 mt-12 text-xs font-mono text-text-muted">
+            <span>Reply within 24h</span>
+            <span className="w-1 h-1 rounded-full bg-border" />
+            <span>Free consultation</span>
+            <span className="w-1 h-1 rounded-full bg-border" />
+            <span>No commitment</span>
+          </div>
         </motion.div>
       </div>
     </section>

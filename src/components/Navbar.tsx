@@ -60,7 +60,7 @@ export function Navbar() {
             : "bg-transparent py-6"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo link to home */}
           <Link
             href="/"

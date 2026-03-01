@@ -30,12 +30,14 @@ export function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="flex items-center gap-4 mb-16"
+          className="mb-16"
         >
-          <h2 className="h2 font-display text-text-primary">
+          <span className="text-xs font-mono uppercase tracking-[0.2em] text-text-muted block mb-4">
+            Career
+          </span>
+          <h2 className="h2 text-text-primary">
             Experience
           </h2>
-          <div className="flex-1 h-px bg-linear-to-r from-border to-transparent" />
         </motion.div>
 
         {/* Timeline */}

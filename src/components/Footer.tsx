@@ -1,22 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { portfolioConfig } from "@/config/portfolio";
 
 export function Footer() {
-  const [currentYear, setCurrentYear] = useState<number | string>(
-    new Date().getFullYear(),
-  );
-
-  useEffect(() => {
-    setCurrentYear(new Date().getFullYear());
-  }, []);
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-surface text-text-secondary">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="border-t border-border/50 bg-surface/50 text-text-secondary">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Top Content Rows */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 justify-between mb-16">
           {/* Row 1: Left Branding */}
@@ -130,7 +123,7 @@ export function Footer() {
               </span>
             </div>
             <span className="hidden sm:inline-block">|</span>
-            <span>Built with Next.js 14</span>
+            <span>Built with Next.js & Django</span>
           </div>
         </div>
       </div>

@@ -1,161 +1,167 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  Code2,
-  Server,
-  Cloud,
-  Database,
-  Smartphone,
-  Globe,
-  ArrowRight,
-} from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const services = [
   {
-    icon: Code2,
-    title: "Full-Stack Web Development",
+    title: "SaaS Web Applications",
     description:
-      "End-to-end web applications built with React/Next.js frontends and robust Python backends. Designed for scale, speed, and seamless user experiences.",
-    price: "From $3,000",
+      "Scalable multi-tenant platforms with subscription billing, real-time dashboards, and API integrations — built on Django + Next.js.",
+    tags: ["Multi-tenancy", "Stripe", "REST APIs"],
   },
   {
-    icon: Server,
-    title: "REST API Development (DRF/FastAPI)",
+    title: "E-Commerce Stores",
     description:
-      "High-performance, secure backend architectures using Django Rest Framework or FastAPI. Complete with automated testing, JWT auth, and swagger docs.",
-    price: "From $1,500",
+      "High-converting online stores with secure checkout, inventory management, and blazing-fast storefront performance.",
+    tags: ["Payment Gateways", "Inventory", "SEO"],
   },
   {
-    icon: Cloud,
-    title: "VPS & Cloud Deployment",
+    title: "School & Institutional Portals",
     description:
-      "Production-ready deployment setups using AWS, DigitalOcean, Docker, and Nginx. CI/CD pipelines configured for automated, zero-downtime releases.",
-    price: "From $800",
+      "Complete management systems — student portals, fee management, attendance tracking, and role-based admin dashboards.",
+    tags: ["Role-Based Access", "Reports", "Parent Portal"],
   },
   {
-    icon: Database,
-    title: "Database Architecture (PostgreSQL)",
+    title: "Business Dashboards & CRMs",
     description:
-      "Expert schema design, query optimization, and data migration strategies for PostgreSQL databases handling complex relationship models.",
-    price: "From $1,000",
+      "Data-rich admin panels with real-time analytics, workflow automation, and third-party integrations.",
+    tags: ["Real-time Data", "Kanban", "Exports"],
   },
   {
-    icon: Smartphone,
-    title: "Frontend Development (React/Next.js)",
+    title: "REST API & Backend Systems",
     description:
-      "Pixel-perfect, accessible, and responsive frontend implementation. Expertise in Tailwind CSS, framer-motion animations, and complex state management.",
-    price: "From $2,000",
+      "Production-grade APIs with Django REST Framework — JWT auth, rate limiting, Swagger docs, and comprehensive tests.",
+    tags: ["OpenAPI", "JWT + OAuth2", "99.9% Uptime"],
   },
   {
-    icon: Globe,
-    title: "Technical SEO & Consulting",
+    title: "SEO & Performance Optimization",
     description:
-      "Deep-dive technical SEO audits, Core Web Vitals optimization, and automated JSON-LD structured data implementation to rank higher on Google.",
-    price: "From $500",
+      "Technical SEO audits, Core Web Vitals tuning, structured data, and page-speed optimization.",
+    tags: ["Core Web Vitals", "JSON-LD", "Lighthouse 95+"],
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
 export function Services({ limit }: { limit?: number }) {
   const displayServices = limit ? services.slice(0, limit) : services;
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="services" className="py-24 md:py-32 lg:py-40 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
+    <section id="services" className="py-24 md:py-32 lg:py-40">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-16"
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16"
         >
-          <div className="flex items-center gap-4 mb-4">
-            <h2 className="h2 font-display text-text-primary">
+          <div>
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-text-muted block mb-4">
               Services
+            </span>
+            <h2 className="h2 text-text-primary">
+              What I <span className="text-gradient">Build</span>
             </h2>
-            <div className="h-px flex-1 bg-linear-to-r from-border to-transparent" />
           </div>
-          <p className="text-lg text-text-secondary max-w-2xl">
-            Specialized engineering and growth services tailored to elevate your
-            business operations and digital presence.
+          <p className="text-text-secondary text-base md:text-lg max-w-md leading-relaxed">
+            From SaaS to e-commerce — complete digital products that convert visitors into customers.
           </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
-        >
+        {/* Numbered rows */}
+        <div className="border-t border-border">
           {displayServices.map((service, index) => (
-            <motion.div key={index} variants={itemVariants} className="h-full">
-              <div className="glass-card h-full flex flex-col group">
-                {/* Icon in accent gradient circle */}
-                <div className="w-14 h-14 rounded-full bg-linear-to-br from-accent to-accent-2 p-px mb-6 shadow-lg shadow-(--accent)/20 group-hover:shadow-(--accent)/40 transition-shadow">
-                  <div className="w-full h-full rounded-full bg-surface flex items-center justify-center">
-                    <service.icon className="w-6 h-6 text-text-primary" />
-                  </div>
-                </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              viewport={{ once: true, margin: "-50px" }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              className="group border-b border-border py-6 md:py-8 cursor-pointer transition-colors duration-300 hover:bg-white/[0.02]"
+            >
+              <div className="flex items-start md:items-center gap-4 md:gap-8">
+                {/* Number */}
+                <span className="text-sm font-mono text-text-muted/50 w-8 shrink-0 pt-1 md:pt-0">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
 
-                <h3 className="text-xl font-bold font-display text-text-primary mb-3 group-hover:text-accent-2 transition-colors">
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl lg:text-3xl font-display font-semibold text-text-primary group-hover:text-gradient transition-colors duration-300 flex-1 min-w-0">
                   {service.title}
                 </h3>
 
-                <p className="text-sm text-text-secondary leading-relaxed mb-8 grow">
-                  {service.description}
-                </p>
-
-                <div className="flex items-center justify-between mt-auto pt-6 border-t border-border">
-                  <span className="text-sm font-mono font-medium text-success bg-(--success)/10 px-3 py-1 rounded-md">
-                    {service.price}
-                  </span>
-
-                  <Link
-                    href="/contact"
-                    className="btn-ghost px-4! py-1.5! text-sm! flex items-center gap-1 group/btn"
-                  >
-                    Get Quote{" "}
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
+                {/* Tags (desktop) */}
+                <div className="hidden lg:flex items-center gap-2 shrink-0">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 text-[10px] font-mono text-text-muted uppercase tracking-wider border border-border rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+
+                {/* Arrow */}
+                <Link
+                  href="/contact"
+                  className="shrink-0 w-10 h-10 rounded-full border border-border flex items-center justify-center transition-all duration-300 group-hover:bg-text-primary group-hover:border-text-primary group-hover:text-background text-text-muted"
+                >
+                  <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:-rotate-0 -rotate-45" />
+                </Link>
               </div>
+
+              {/* Reveal description on hover */}
+              <AnimatePresence>
+                {hoveredIndex === index && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="pl-12 md:pl-16 text-sm md:text-base text-text-secondary max-w-2xl pt-3 leading-relaxed">
+                      {service.description}
+                    </p>
+                    {/* Tags (mobile, shown on hover) */}
+                    <div className="flex lg:hidden flex-wrap gap-2 pl-12 md:pl-16 pt-3">
+                      {service.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 text-[10px] font-mono text-text-muted uppercase tracking-wider border border-border rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Home view CTA */}
+        {/* CTA */}
         {limit && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ delay: 0.3 }}
             viewport={{ once: true }}
-            className="flex justify-center mt-12"
+            className="flex justify-center mt-16"
           >
             <Link
               href="/services"
-              className="btn-ghost flex items-center gap-2 text-lg"
+              className="btn-ghost flex items-center gap-2 text-base"
             >
-              View All Services <ArrowRight className="w-5 h-5" />
+              All Services <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
         )}

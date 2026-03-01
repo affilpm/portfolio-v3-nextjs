@@ -4,20 +4,23 @@ import { Services } from "@/components/Services";
 import { ContactStrip } from "@/components/ContactStrip";
 
 export const metadata: Metadata = {
-  title: `Freelance Services & Consulting | ${portfolioConfig.name}`,
+  title: `Web Development Services — SaaS, E-Commerce & More | ${portfolioConfig.name}`,
   description:
-    "Professional freelance services including Python backend architecture, Next.js frontend development, SEO consulting, and cloud deployment strategies.",
+    "I build SaaS platforms, e-commerce stores, school portals, business dashboards, and REST APIs with Django, Next.js & PostgreSQL. Get a free consultation.",
   keywords: [
-    "freelance web developer",
-    "backend architecture consulting",
-    "next.js development services",
-    "django expert for hire",
-    "SEO technical audit",
+    "saas developer for hire",
+    "ecommerce website developer",
+    "school management system developer",
+    "django web application",
+    "next.js developer freelance",
+    "custom crm development",
+    "rest api developer",
+    "seo optimization services",
   ],
   openGraph: {
     title: `Services | ${portfolioConfig.name}`,
     description:
-      "Hire a professional full-stack engineer for your next ambitious project.",
+      "SaaS, e-commerce, school portals, dashboards & APIs — hire a full-stack engineer for your next project.",
     type: "website",
   },
 };
@@ -72,15 +75,14 @@ export default function ServicesPage() {
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-8">
         <h1 className="h1 mb-6">
-          <span className="text-text-primary block">How I Can</span>
-          <span className="text-gradient block">Drive Growth.</span>
+          <span className="text-text-primary block">Websites & Apps</span>
+          <span className="text-gradient block">That Drive Revenue.</span>
         </h1>
         <p className="text-xl text-text-secondary leading-relaxed max-w-2xl">
-          I partner with startups and established businesses to build robust
-          software. Whether you need a full-stack platform or a specialized
-          backend service, I deliver scalable results.
+          From SaaS platforms to e-commerce stores — I design, build, and deploy
+          complete digital products that convert visitors into paying customers.
         </p>
       </div>
 

@@ -1,11 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, CheckCircle, Code, Rocket, Globe } from "lucide-react";
-import Image from "next/image";
+import {
+  MapPin,
+  CheckCircle,
+  Code,
+  Globe,
+} from "lucide-react";
 import { portfolioConfig } from "@/config/portfolio";
 
-// Base animation for all bento cards
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -21,7 +24,7 @@ export function About({ priority = false }: AboutProps) {
       id="about"
       className={`${priority ? "py-4 md:py-12" : "py-24 md:py-32 lg:py-40"} relative`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={priority ? false : { opacity: 0, y: 20 }}
           animate={priority ? { opacity: 1, y: 0 } : undefined}
@@ -30,12 +33,17 @@ export function About({ priority = false }: AboutProps) {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-12 md:mb-16"
         >
+          {!priority && (
+            <span className="text-xs font-mono uppercase tracking-[0.2em] text-text-muted block mb-4">
+              About
+            </span>
+          )}
           {priority ? (
             <h1 className="text-5xl md:text-7xl font-bold font-display tracking-tight text-text-primary mb-6">
               About Me
             </h1>
           ) : (
-            <h2 className="h2 font-display text-text-primary mb-4">About Me</h2>
+            <h2 className="h2 text-text-primary mb-4">About Me</h2>
           )}
           <p
             className={`text-text-secondary max-w-2xl ${
@@ -43,7 +51,7 @@ export function About({ priority = false }: AboutProps) {
             }`}
           >
             A glimpse into who I am, where I'm based, and the experience I bring
-            to the table.
+            to every project.
           </p>
         </motion.div>
 
@@ -59,7 +67,7 @@ export function About({ priority = false }: AboutProps) {
           animate={priority ? "show" : undefined}
           whileInView={!priority ? "show" : undefined}
           viewport={!priority ? { once: true, amount: 0.1 } : undefined}
-          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 auto-rows-[minmax(140px,auto)]"
+          className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 auto-rows-[minmax(140px,auto)]"
         >
           {/* Cell 1: Profile Photo (col-span-1, row-span-2) */}
           <motion.div
@@ -68,37 +76,36 @@ export function About({ priority = false }: AboutProps) {
           >
             <div className="w-full h-full rounded-2xl bg-linear-to-br from-accent to-accent-2 p-[2px]">
               <div className="w-full h-full bg-surface rounded-2xl overflow-hidden relative min-h-[300px] md:min-h-0">
-                {/* Fallback pattern if no image */}
-                <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPHBhdGggZD0iTTAgMGw4IDhaTTAgOGw4IC04Wk0tMiAyeiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]"></div>
+                <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPHBhdGggZD0iTTAgMGw4IDhaTTAgOGw4IC04Wk0tMiAyeiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utb3BhY2l0eT0iMC4xIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+')]" />
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent z-10" />
                 <div className="absolute bottom-4 left-4 z-20">
                   <p className="font-display font-bold text-xl text-white">
                     Affil PM
                   </p>
-                  <p className="text-sm text-white/70">Engineer & Designer</p>
+                  <p className="text-sm text-white/70">Full-Stack Engineer</p>
                 </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Cell 2: Bio Text (col-span-2) */}
+          {/* Cell 2: Bio Text */}
           <motion.div
             variants={itemVariants}
             className="md:col-span-2 lg:col-span-2 glass-card flex flex-col justify-center"
           >
             <h3 className="text-xl font-bold font-display text-text-primary mb-3 flex items-center gap-2">
               <Code className="w-5 h-5 text-accent" />
-              My Philosophy
+              My Approach
             </h3>
             <p className="text-lg text-text-secondary leading-relaxed">
-              I am a passionate Full-Stack Developer specializing in Python,
-              Django, and React. With intense dedication to continuous learning,
-              I focus on building secure, scalable architectures and visually
-              stunning web applications that solve real-world problems.
+              I build production-grade web applications that are fast, secure,
+              and scalable. From Django backends to Next.js frontends, I focus
+              on clean architecture, rigorous testing, and user-first design
+              that turns ideas into revenue-generating digital products.
             </p>
           </motion.div>
 
-          {/* Cell 3: Location (col-span-1) */}
+          {/* Cell 3: Location */}
           <motion.div
             variants={itemVariants}
             className="md:col-span-1 lg:col-span-1 glass-card flex flex-col justify-center items-center text-center group"
@@ -112,7 +119,7 @@ export function About({ priority = false }: AboutProps) {
             <p className="text-sm text-text-muted">Available Worldwide</p>
           </motion.div>
 
-          {/* Cell 4: Experience Years (col-span-1) */}
+          {/* Cell 4: Experience Years */}
           <motion.div
             variants={itemVariants}
             className="md:col-span-1 lg:col-span-1 glass-card flex flex-col justify-center items-center text-center"
@@ -125,20 +132,20 @@ export function About({ priority = false }: AboutProps) {
             </p>
           </motion.div>
 
-          {/* Cell 5: Projects Shipped (col-span-1) */}
+          {/* Cell 5: Projects Shipped */}
           <motion.div
             variants={itemVariants}
             className="md:col-span-1 lg:col-span-1 glass-card flex flex-col justify-center items-center text-center"
           >
             <p className="text-5xl font-display font-bold text-gradient mb-2">
-              6+
+              9+
             </p>
             <p className="text-sm font-medium text-text-secondary uppercase tracking-wider">
               Projects
             </p>
           </motion.div>
 
-          {/* Cell 6: Remote Ready (col-span-1) */}
+          {/* Cell 6: Remote Ready */}
           <motion.div
             variants={itemVariants}
             className="md:col-span-1 lg:col-span-1 glass-card flex flex-col justify-center items-center text-center bg-(--card-hover)/50 border-(--success)/20"
@@ -148,7 +155,7 @@ export function About({ priority = false }: AboutProps) {
             <p className="text-xs text-text-muted mt-1">Clear Communicator</p>
           </motion.div>
 
-          {/* Cell 7: Currently Open To (col-span-2) */}
+          {/* Cell 7: Currently Open To */}
           <motion.div
             variants={itemVariants}
             className="md:col-span-2 lg:col-span-2 glass-card flex flex-col justify-center"
@@ -157,22 +164,23 @@ export function About({ priority = false }: AboutProps) {
               Currently Open To
             </h3>
             <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1.5 bg-surface-2 border border-border rounded-md text-sm text-text-primary">
-                Full-Time (Remote)
-              </span>
-              <span className="px-3 py-1.5 bg-surface-2 border border-border rounded-md text-sm text-text-primary">
-                Contract Roles
-              </span>
-              <span className="px-3 py-1.5 bg-surface-2 border border-border rounded-md text-sm text-text-primary">
-                Freelance Projects
-              </span>
-              <span className="px-3 py-1.5 bg-surface-2 border border-border rounded-md text-sm text-text-primary">
-                SEO Consulting
-              </span>
+              {[
+                "Full-Time (Remote)",
+                "Contract Roles",
+                "Freelance Projects",
+                "Technical Consulting",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="px-3 py-1.5 bg-surface-2/80 border border-border/50 rounded-lg text-sm text-text-primary"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
           </motion.div>
 
-          {/* Cell 8: SEO Wins / Stats (col-span-1) */}
+          {/* Cell 8: SEO Wins */}
           <motion.div
             variants={itemVariants}
             className="md:col-span-1 lg:col-span-2 glass-card flex flex-col justify-center bg-linear-to-br from-(--surface-2)/50 to-transparent relative overflow-hidden group"

@@ -43,51 +43,39 @@ export function WorkClient() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-full border border-border bg-surface-2 self-start"
+        className="flex flex-wrap items-center gap-1 self-start"
       >
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => handleTabChange(category)}
-            className={`relative px-6 py-3 rounded-full text-sm sm:text-base font-medium transition-colors ${
+            className={`relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
               activeTab === category
-                ? "text-text-primary"
-                : "text-text-muted hover:text-text-primary hover:bg-(--card-hover)"
+                ? "text-background bg-text-primary"
+                : "text-text-muted hover:text-text-primary"
             }`}
           >
-            {activeTab === category && (
-              <motion.div
-                layoutId="work-page-tab-indicator"
-                className="absolute inset-0 bg-linear-to-r from-accent to-accent-2 rounded-full shadow-lg shadow-(--accent)/20"
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              />
-            )}
-            <span className="relative z-10">{category}</span>
+            {category}
           </button>
         ))}
       </motion.div>
 
       {/* Projects Grid */}
-      <div className="min-h-[800px] w-full mt-12">
-        <motion.div
-          layout
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.slug}
-                layout
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-              >
-                <ProjectCard project={project} index={index} featured={true} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+      <div className="min-h-[800px] w-full mt-12 border-t border-border">
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.slug}
+              layout
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35, delay: index * 0.05 }}
+            >
+              <ProjectCard project={project} index={index} featured={true} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
 
         {filteredProjects.length === 0 && (
           <motion.div
