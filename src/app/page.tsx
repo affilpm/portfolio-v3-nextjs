@@ -4,7 +4,6 @@ import { About } from "@/components/About";
 import { Skills } from "@/components/Skills";
 import { Experience } from "@/components/Experience";
 import { Work } from "@/components/Work";
-import { Testimonials } from "@/components/Testimonials";
 import { ContactStrip } from "@/components/ContactStrip";
 import { getAllPosts } from "@/lib/mdx";
 
@@ -22,11 +21,9 @@ export default async function Home() {
       <Work />
       {/* 4. Who I am */}
       <About />
-      {/* 5. Endorsements / Testimonials */}
-      <Testimonials />
-      {/* 6. Content marketing */}
+      {/* 5. Content marketing */}
       <BlogTeaser posts={latestPosts} />
-      {/* 7. Final CTA */}
+      {/* 6. Final CTA */}
       <ContactStrip />
     </main>
   );
