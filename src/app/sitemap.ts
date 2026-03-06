@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/work",
-    "/services",
     "/about",
     "/resume",
     "/contact",
@@ -19,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1 : route === "/services" ? 0.9 : 0.8,
+    priority: route === "" ? 1 : 0.8,
   }));
 
   // Project/case study pages

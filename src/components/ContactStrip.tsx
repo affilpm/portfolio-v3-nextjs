@@ -21,14 +21,13 @@ export function ContactStrip() {
         >
           {/* Massive headline */}
           <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold text-text-primary leading-[0.95] tracking-tight mb-8">
-            Have a project
+            Seeking new
             <br />
-            <span className="text-gradient">in mind?</span>
+            <span className="text-gradient">opportunities?</span>
           </h2>
 
           <p className="text-base md:text-lg text-text-secondary max-w-lg mx-auto mb-12 leading-relaxed">
-            Let&apos;s turn your vision into a fast, scalable product that
-            drives real growth.
+            Let&apos;s talk about how I can bring value to your engineering team.
           </p>
 
           {/* CTAs */}
@@ -37,7 +36,7 @@ export function ContactStrip() {
               href="/contact"
               className="btn-primary group text-lg px-10 py-4"
             >
-              <span>Start a Project</span>
+              <span>Get in Touch</span>
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
@@ -52,9 +51,9 @@ export function ContactStrip() {
           <div className="flex items-center justify-center gap-6 mt-12 text-xs font-mono text-text-muted">
             <span>Reply within 24h</span>
             <span className="w-1 h-1 rounded-full bg-border" />
-            <span>Free consultation</span>
+            <span>Open to Relocation</span>
             <span className="w-1 h-1 rounded-full bg-border" />
-            <span>No commitment</span>
+            <span>Available Now</span>
           </div>
         </motion.div>
       </div>

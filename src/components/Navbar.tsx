@@ -13,10 +13,8 @@ import { Menu, X } from "lucide-react";
 import { portfolioConfig } from "@/config/portfolio";
 
 const links = [
-  { name: "Work", href: "/work" },
   { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Resume", href: "/resume" },
+  { name: "Work", href: "/work" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];

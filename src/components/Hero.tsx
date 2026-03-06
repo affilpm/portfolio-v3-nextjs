@@ -8,10 +8,10 @@ import Link from "next/link";
 const ROLES = ["Products", "Systems", "Experiences", "Solutions"];
 
 const STATS = [
-  { value: "9+", label: "Projects" },
-  { value: "<1s", label: "Load Time" },
-  { value: "100%", label: "Satisfaction" },
-  { value: "24h", label: "Response" },
+  { value: "3+", label: "Years Exp." },
+  { value: "5+", label: "Projects" },
+  { value: "10+", label: "Technologies" },
+  { value: "100%", label: "Committed" },
 ];
 
 export function Hero() {
@@ -60,7 +60,7 @@ export function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-success" />
           </span>
           <span className="text-xs font-mono uppercase tracking-[0.15em] text-text-muted">
-            Available for Projects
+            Available for Full-time Roles
           </span>
         </motion.div>
 
@@ -111,9 +111,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="text-base md:text-lg text-text-secondary leading-relaxed"
           >
-            Full-Stack Engineer turning complex business problems into{" "}
+            Software Engineer turning complex business problems into{" "}
             <span className="text-text-primary font-medium">
-              fast, secure, revenue-generating
+              scalable, secure, and maintainable
             </span>{" "}
             web applications with Django, Next.js &amp; PostgreSQL.
           </motion.p>

@@ -42,12 +42,6 @@ export function Footer() {
               >
                 About
               </Link>
-              <Link
-                href="/services"
-                className="hover:text-text-primary hover:translate-x-1 transition-all"
-              >
-                Services
-              </Link>
             </div>
             <div className="space-y-3 flex flex-col">
               <Link
