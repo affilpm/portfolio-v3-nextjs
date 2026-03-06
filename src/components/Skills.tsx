@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const devSkills = [
@@ -32,6 +33,12 @@ function MarqueeRow({ items, reverse = false }: { items: string[]; reverse?: boo
 }
 
 export function Skills() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <section id="skills" className="py-24 md:py-32 lg:py-40 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 mb-16">
@@ -51,7 +58,7 @@ export function Skills() {
             </h2>
           </div>
           <p className="text-text-secondary text-base md:text-lg max-w-md leading-relaxed">
-            A modern toolkit of frameworks, databases, and growth strategies.
+            A modern toolkit of frameworks, databases, and digital growth strategies.
           </p>
         </motion.div>
       </div>
@@ -63,8 +70,14 @@ export function Skills() {
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8 }}
       >
-        <MarqueeRow items={devSkills} />
-        <MarqueeRow items={marketingSkills} reverse />
+        {isMounted ? (
+          <>
+            <MarqueeRow items={devSkills} />
+            <MarqueeRow items={marketingSkills} reverse />
+          </>
+        ) : (
+          <div className="h-[200px]" />
+        )}
       </motion.div>
     </section>
   );
