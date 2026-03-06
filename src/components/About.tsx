@@ -164,23 +164,20 @@ export function About({ priority = false }: AboutProps) {
               Currently Open To
             </h3>
             <div className="flex flex-wrap gap-2">
-              {[
-                "Full-Time (Remote)",
-                "Contract Roles",
-                "Freelance Projects",
-                "Technical Consulting",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="px-3 py-1.5 bg-surface-2/80 border border-border/50 rounded-lg text-sm text-text-primary"
-                >
-                  {item}
-                </span>
-              ))}
+              {["Full-Time (Remote)", "Software Engineering", "Product Development"].map(
+                (item) => (
+                  <span
+                    key={item}
+                    className="px-3 py-1.5 bg-surface-2/80 border border-border/50 rounded-lg text-sm text-text-primary"
+                  >
+                    {item}
+                  </span>
+                )
+              )}
             </div>
           </motion.div>
 
-          {/* Cell 8: SEO Wins */}
+          {/* Cell 8: Performance/Optimization */}
           <motion.div
             variants={itemVariants}
             className="md:col-span-1 lg:col-span-2 glass-card flex flex-col justify-center bg-linear-to-br from-(--surface-2)/50 to-transparent relative overflow-hidden group"
@@ -188,10 +185,11 @@ export function About({ priority = false }: AboutProps) {
             <Globe className="absolute -right-6 -bottom-6 w-32 h-32 text-(--text-muted)/10 group-hover:scale-110 transition-transform duration-500" />
             <div className="relative z-10">
               <p className="text-3xl font-display font-bold text-text-primary mb-1">
-                Top 3 Rank
+                Optimization
               </p>
               <p className="text-text-secondary text-sm">
-                For competitive keywords across 5+ client domains.
+                Focused on delivering high-performance, accessible, and
+                SEO-friendly web architectures.
               </p>
             </div>
           </motion.div>

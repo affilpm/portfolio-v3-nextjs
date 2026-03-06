@@ -7,10 +7,9 @@ const devSkills = [
   "Svelte", "PostgreSQL", "Linux", "Docker", "AWS", "Git",
 ];
 
-const seoSkills = [
+const marketingSkills = [
   "Technical SEO", "On-Page SEO", "Schema Markup", "Core Web Vitals",
-  "GA4", "Search Console", "Site Speed", "SEO Audits",
-  "Keyword Research", "Link Building", "Ahrefs", "Semrush",
+  "Search Console", "Site Speed", "SEO Audits", "Keyword Research",
 ];
 
 function MarqueeRow({ items, reverse = false }: { items: string[]; reverse?: boolean }) {
@@ -65,7 +64,7 @@ export function Skills() {
         transition={{ duration: 0.8 }}
       >
         <MarqueeRow items={devSkills} />
-        <MarqueeRow items={seoSkills} reverse />
+        <MarqueeRow items={marketingSkills} reverse />
       </motion.div>
     </section>
   );
